@@ -46,8 +46,8 @@
 	
 	SpeechManager   *speechManager;
 	NSTextView *speakingView;
-	NSRange	selectionRange;			// �I������Ă��镶����͈̔�
-    long	speechStartPos;			// �ǂݏグ�J�n�ʒu
+	NSRange	selectionRange;			// 選択されている文字列の範囲
+    long	speechStartPos;			// 読み上げ開始位置
 	BOOL	existsLastWord;
 }
 

@@ -5,7 +5,7 @@
 //  Created by numata on Mon Sep 30 2002.
 //  Copyright (c) 2002 Satoshi NUMATA. All rights reserved.
 //
-//  ‰p•¶ƒeƒLƒXƒg“Ç‚İã‚°‹@”\‚ğƒTƒ|[ƒg‚·‚é‚½‚ß‚ÌƒNƒ‰ƒXB
+//  è‹±æ–‡ãƒ†ã‚­ã‚¹ãƒˆèª­ã¿ä¸Šã’æ©Ÿèƒ½ã‚’ã‚µãƒãƒ¼ãƒˆã™ã‚‹ãŸã‚ã®ã‚¯ãƒ©ã‚¹ã€‚
 //
 
 
@@ -14,17 +14,17 @@
 
 @interface SpeechManager : NSObject
 {
-	// “Ç‚İã‚°‹@”\‚ğƒTƒ|[ƒg‚·‚é‚½‚ß‚Ìƒƒ“ƒo
+	// èª­ã¿ä¸Šã’æ©Ÿèƒ½ã‚’ã‚µãƒãƒ¼ãƒˆã™ã‚‹ãŸã‚ã®ãƒ¡ãƒ³ãƒ
     SpeechChannel	speechChannel;
 	long			stopMode;
 
-	// Šeíó‘Ô
+	// å„ç¨®çŠ¶æ…‹
 	BOOL	isSpeaking;
 	int		currentPos;
 	int		currentLength;
 	OSErr	lastError;
 
-	// ƒR[ƒ‹ƒoƒbƒN‚Ì‚½‚ß‚ÌƒZƒŒƒNƒ^‚Æƒ^[ƒQƒbƒg
+	// ã‚³ãƒ¼ãƒ«ãƒãƒƒã‚¯ã®ãŸã‚ã®ã‚»ãƒ¬ã‚¯ã‚¿ã¨ã‚¿ãƒ¼ã‚²ãƒƒãƒˆ
 	id	target;
 	SEL	speakingStartedMethod;
 	SEL	speakingPosChangedMethod;
@@ -32,7 +32,7 @@
 	SEL	errorOccuredMethod;
 }
 
-// ‰Šú‰»ƒƒ\ƒbƒh
+// åˆæœŸåŒ–ãƒ¡ã‚½ãƒƒãƒ‰
 - (id)initWithStopMode:(long)stopMode_
 	target:(id)target
 	speakingStartedMethod:(SEL)speakingStartedMethod_
@@ -41,19 +41,19 @@
 	errorOccuredMethod:(SEL)errorOccuredMethod_;
 - (BOOL)createSpeechChannel;
 
-// “Ç‚İã‚°‚ÌŠJn‚ÆI—¹ƒƒ\ƒbƒh
+// èª­ã¿ä¸Šã’ã®é–‹å§‹ã¨çµ‚äº†ãƒ¡ã‚½ãƒƒãƒ‰
 - (void)speakText:(NSString *)text;
 - (void)stopSpeaking;
 
-// “Ç‚İã‚°ƒ†[ƒeƒBƒŠƒeƒB
+// èª­ã¿ä¸Šã’ãƒ¦ãƒ¼ãƒ†ã‚£ãƒªãƒ†ã‚£
 - (NSString *)convertToSpeakableText:(NSString *)text;
 
-// Šeíó‘Ô‚Ì•ÏXƒƒ\ƒbƒh
+// å„ç¨®çŠ¶æ…‹ã®å¤‰æ›´ãƒ¡ã‚½ãƒƒãƒ‰
 - (void)setSpeaking:(BOOL)flag;
 - (void)setCurrentSpeakingPos:(int)pos length:(int)length;
 - (void)setError:(OSErr)error pos:(int)pos;
 
-// Šeíó‘Ô‚Ìæ“¾ƒƒ\ƒbƒh
+// å„ç¨®çŠ¶æ…‹ã®å–å¾—ãƒ¡ã‚½ãƒƒãƒ‰
 - (BOOL)isSpeaking;
 - (int)currentPos;
 - (int)currentLength;
@@ -62,7 +62,7 @@
 @end
 
 
-// ƒR[ƒ‹ƒoƒbƒNŠÖ”‚Ìƒvƒƒgƒ^ƒCƒv
+// ã‚³ãƒ¼ãƒ«ãƒãƒƒã‚¯é–¢æ•°ã®ãƒ—ãƒ­ãƒˆã‚¿ã‚¤ãƒ—
 pascal void ErrorCallBackProc(
 	SpeechChannel inSpeechChannel, long inRefCon, OSErr inError, long inBytePos);
 

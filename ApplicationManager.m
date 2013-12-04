@@ -185,12 +185,12 @@ static ApplicationManager *_instance;
 	[scrollView setVerticalScroller:scroller];
 	[scrollView setHidden:NO];
 	[resizeView setHidden:NO];
-	// ‰æ–Ê‰º‚É’£‚è•t‚¢‚Ä‚¢‚½ê‡
+	// ç”»é¢ä¸‹ã«å¼µã‚Šä»˜ã„ã¦ã„ãŸå ´åˆ
 	if (frameRect.origin.y == 28 - frameRect.size.height) {
 		frameRect.origin.y = 0;
 		[mainWindow setFrame:frameRect display:YES animate:YES];
 	}
-	// ‰º‚ÌDock‚É’£‚è•t‚¢‚Ä‚¢‚½ê‡i‚ ‚Ü‚èg‚í‚ê‚È‚³‚»‚¤‚È‹C‚ª‚·‚é‚Ì‚ÅA‚Æ‚è‚ ‚¦‚¸OFFj
+	// ä¸‹ã®Dockã«å¼µã‚Šä»˜ã„ã¦ã„ãŸå ´åˆï¼ˆã‚ã¾ã‚Šä½¿ã‚ã‚Œãªã•ãã†ãªæ°—ãŒã™ã‚‹ã®ã§ã€ã¨ã‚Šã‚ãˆãšOFFï¼‰
 	/*else if (screenRect.origin.y < visibleScreenRect.origin.y &&
 			 frameRect.origin.y == 28 + visibleScreenRect.origin.y - screenRect.origin.y - frameRect.size.height)
 	{
@@ -204,12 +204,12 @@ static ApplicationManager *_instance;
 
 - (void)hideResultView {
 	NSRect frameRect = [mainWindow frame];
-	// ‰æ–Ê‰º‚É’£‚è•t‚¢‚Ä‚¢‚éê‡
+	// ç”»é¢ä¸‹ã«å¼µã‚Šä»˜ã„ã¦ã„ã‚‹å ´åˆ
 	if (frameRect.origin.y == 0) {
 		frameRect.origin.y = 28 - frameRect.size.height;
 		[mainWindow setFrame:frameRect display:YES animate:YES];
 	}
-	// ‰º‚ÌDock‚É’£‚è•t‚¢‚Ä‚¢‚½ê‡i‚ ‚Ü‚èg‚í‚ê‚È‚³‚»‚¤‚È‹C‚ª‚·‚é‚Ì‚ÅA‚Æ‚è‚ ‚¦‚¸OFFj
+	// ä¸‹ã®Dockã«å¼µã‚Šä»˜ã„ã¦ã„ãŸå ´åˆï¼ˆã‚ã¾ã‚Šä½¿ã‚ã‚Œãªã•ãã†ãªæ°—ãŒã™ã‚‹ã®ã§ã€ã¨ã‚Šã‚ãˆãšOFFï¼‰
 	/*else if (screenRect.origin.y < visibleScreenRect.origin.y &&
 			 frameRect.origin.y == visibleScreenRect.origin.y - screenRect.origin.y)
 	{
@@ -462,14 +462,14 @@ static ApplicationManager *_instance;
 		// Do compare
 		int comparisonResult = mystrncmp((p + middlePos), searchWordC, targetLength, YES);
 		if (comparisonResult == 0) {
-			// ŒŸõ•¶š—ñ‚ªŒ©‚Â‚©‚Á‚½B
-			// middlePos •Ï”‚ªæ“ª‚ÌƒCƒ“ƒfƒNƒX‚ğ•Û‚µ‚Ä‚¢‚éB
+			// æ¤œç´¢æ–‡å­—åˆ—ãŒè¦‹ã¤ã‹ã£ãŸã€‚
+			// middlePos å¤‰æ•°ãŒå…ˆé ­ã®ã‚¤ãƒ³ãƒ‡ã‚¯ã‚¹ã‚’ä¿æŒã—ã¦ã„ã‚‹ã€‚
 			//[debugManager addDebugString:@"[Found]"];
 			break;
 		} else if (comparisonResult < 0) {
-			// Œ»İ‚ÌƒCƒ“ƒfƒNƒX‚æ‚è‚àŒã‚ë‚Ì•”•ª‚É‚µ‚©ŒŸõ•¶š—ñ‚Í‘¶İ‚µ‚È‚¢
+			// ç¾åœ¨ã®ã‚¤ãƒ³ãƒ‡ã‚¯ã‚¹ã‚ˆã‚Šã‚‚å¾Œã‚ã®éƒ¨åˆ†ã«ã—ã‹æ¤œç´¢æ–‡å­—åˆ—ã¯å­˜åœ¨ã—ãªã„
 			startPos = middlePos;
-			// ‚»‚Ìs‚ÌÅŒã‚Ü‚ÅƒCƒ“ƒfƒNƒX‚ğ‘—‚é
+			// ãã®è¡Œã®æœ€å¾Œã¾ã§ã‚¤ãƒ³ãƒ‡ã‚¯ã‚¹ã‚’é€ã‚‹
 			while (startPos < endPos && p[startPos] != 0x0a && p[startPos] != 0x0d) {
 				if (isFirst2BytesCharacter(p[startPos])) {
 					startPos++;
@@ -480,7 +480,7 @@ static ApplicationManager *_instance;
 				startPos++;
 			}
 		} else {
-			// Œ»İ‚ÌƒCƒ“ƒfƒNƒX‚æ‚è‚à‘O‚Ì•”•ª‚É‚µ‚©ŒŸõ•¶š—ñ‚Í‘¶İ‚µ‚È‚¢
+			// ç¾åœ¨ã®ã‚¤ãƒ³ãƒ‡ã‚¯ã‚¹ã‚ˆã‚Šã‚‚å‰ã®éƒ¨åˆ†ã«ã—ã‹æ¤œç´¢æ–‡å­—åˆ—ã¯å­˜åœ¨ã—ãªã„
 			endPos = middlePos - 1;
 		}
 	}
@@ -504,8 +504,8 @@ static ApplicationManager *_instance;
 		endPos++;
 	}	
 
-	// “¯‚¶ƒŒƒxƒ‹‚Ì•¶š—ñ‚ğã•ûŒü‚ÉŒŸõ‚µAstartPos •Ï”‚ğ‚»‚ÌƒŒƒxƒ‹‚Ì•¶š—ñ‚ª
-	// Å‰‚ÉŒ»‚ê‚és‚Ìæ“ª‚ÌƒCƒ“ƒfƒNƒX’l‚Æ‚·‚éB
+	// åŒã˜ãƒ¬ãƒ™ãƒ«ã®æ–‡å­—åˆ—ã‚’ä¸Šæ–¹å‘ã«æ¤œç´¢ã—ã€startPos å¤‰æ•°ã‚’ãã®ãƒ¬ãƒ™ãƒ«ã®æ–‡å­—åˆ—ãŒ
+	// æœ€åˆã«ç¾ã‚Œã‚‹è¡Œã®å…ˆé ­ã®ã‚¤ãƒ³ãƒ‡ã‚¯ã‚¹å€¤ã¨ã™ã‚‹ã€‚
 	startPos = middlePos - 1;
 	while (startPos > 0) {
 		// Next search word is appered.
@@ -528,7 +528,7 @@ static ApplicationManager *_instance;
 	}
 	startPos = middlePos;
 
-	// “¯‚¶ƒŒƒxƒ‹‚Ì•¶š—ñ‚ªŒ©‚Â‚©‚éŠÔAendPos •Ï”‚ğ‘—‚Á‚Ä‚¢‚­B
+	// åŒã˜ãƒ¬ãƒ™ãƒ«ã®æ–‡å­—åˆ—ãŒè¦‹ã¤ã‹ã‚‹é–“ã€endPos å¤‰æ•°ã‚’é€ã£ã¦ã„ãã€‚
 	middlePos = startPos;
 	endPos = startPos + 1;
 	int count = 0;
@@ -1029,7 +1029,7 @@ static ApplicationManager *_instance;
 	}
 }
 
-// ”­‰¹‹L†‚Ì•â³
+// ç™ºéŸ³è¨˜å·ã®è£œæ­£
 - (NSString *)correctPronunciationSymbolFromString:(NSString *)string {
 	int i;
 	int length = [string length];
@@ -1086,23 +1086,23 @@ static ApplicationManager *_instance;
 					case 0x0060:	// `
 						c = 0x0300;
 						break;
-					case 0x0061: // P‚Ì•t‚¢‚½a
+					case 0x0061: // å‚˜ã®ä»˜ã„ãŸa
 								 // ae
 						if (i+1 < length && [string characterAtIndex:i+1] == 0x65) {
 							c = 0x00e6;
 							i++;
 						}
 						break;
-					case 0x044d:	// e‚Ì‚Ğ‚Á‚­‚è•Ô‚Á‚½a
+					case 0x044d:	// eã®ã²ã£ãã‚Šè¿”ã£ãŸa
 						c = 0x0259;
 						break;
-					case 0x039b:	// ƒ^[ƒ“A
+					case 0x039b:	// ã‚¿ãƒ¼ãƒ³A
 						c = 0x028c;
 						break;
 					case 0x03b1:	// a
 						c = 0x0251;
 						break;
-					case 0x03b4:	// thi‘÷‰¹j
+					case 0x03b4:	// thï¼ˆæ¿éŸ³ï¼‰
 						c = 0x00f0;
 						break;
 					case 0x03b7:	// ng
@@ -1117,20 +1117,20 @@ static ApplicationManager *_instance;
 					case 0x20dd:	// sh
 						c = 0x0283;
 						break;
-					case 0x5c0f:	// ŠÔ‚É‹²‚Ü‚Á‚Ä‚¢‚é³‘Ì•s–¾‚Ì•¶šiƒnƒCƒtƒ“Hj
+					case 0x5c0f:	// é–“ã«æŒŸã¾ã£ã¦ã„ã‚‹æ­£ä½“ä¸æ˜ã®æ–‡å­—ï¼ˆãƒã‚¤ãƒ•ãƒ³ï¼Ÿï¼‰
 						pass = YES;
 						break;
-					case 0xff4f:	// c‚ª‚Ğ‚Á‚­‚è•Ô‚Á‚½o
+					case 0xff4f:	// cãŒã²ã£ãã‚Šè¿”ã£ãŸo
 						c = 0x0254;
 						break;
 				}
-				// •ÏŠ·‚µ‚½Œ‹‰Ê‚ğ’Ç‰Á
+				// å¤‰æ›ã—ãŸçµæœã‚’è¿½åŠ 
 				if (!pass) {
 					buffer[pos++] = c;
 				}
 			}
 		} else {
-			// ’Ç‰Á
+			// è¿½åŠ 
 			buffer[pos++] = [string characterAtIndex:i];
 		}
 	}
@@ -1149,13 +1149,13 @@ static ApplicationManager *_instance;
 	
 	for (i = 0; i < length; i++) {
 		unichar c = [string characterAtIndex:i];
-		if (c == 0xff5b) {	// ‘SŠp‚Ìuov
+		if (c == 0xff5b) {	// å…¨è§’ã®ã€Œï½›ã€
 			ignoring = YES;
 		}
 		if (!ignoring) {
 			buffer[pos++] = c;
 		}
-		if (c == 0xff5d) {	// ‘SŠp‚Ìupv
+		if (c == 0xff5d) {	// å…¨è§’ã®ã€Œï½ã€
 			ignoring = NO;
 		}
 	}
