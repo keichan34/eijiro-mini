@@ -2,7 +2,7 @@
 
 @implementation MEPanel
 
-- (id)initWithContentRect:(NSRect)contentRect styleMask:(unsigned int)styleMask backing:(NSBackingStoreType)backingType defer:(BOOL)flag
+- (id)initWithContentRect:(NSRect)contentRect styleMask:(NSUInteger)styleMask backing:(NSBackingStoreType)backingType defer:(BOOL)flag
 {
 	self = [super initWithContentRect:contentRect
 							styleMask:NSBorderlessWindowMask|NSTexturedBackgroundWindowMask

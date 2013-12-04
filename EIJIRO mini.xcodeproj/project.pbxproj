@@ -92,7 +92,7 @@
 		8E58C5BE05B7076D00D6CAA3 /* MESearchField.h */ = {isa = PBXFileReference; fileEncoding = 18446744071562067968; lastKnownFileType = sourcecode.c.h; path = MESearchField.h; sourceTree = "<group>"; };
 		8E58C5BF05B7076D00D6CAA3 /* MESearchField.m */ = {isa = PBXFileReference; fileEncoding = 18446744071562067968; lastKnownFileType = sourcecode.c.objc; path = MESearchField.m; sourceTree = "<group>"; };
 		8E58C61B05B70A4600D6CAA3 /* resize_indicator.tif */ = {isa = PBXFileReference; lastKnownFileType = image.tiff; path = resize_indicator.tif; sourceTree = "<group>"; };
-		8E91A3B205B8B5F3002814DB /* SpeechManager.m */ = {isa = PBXFileReference; fileEncoding = 18446744071562067968; lastKnownFileType = sourcecode.c.objc; path = SpeechManager.m; sourceTree = "<group>"; };
+		8E91A3B205B8B5F3002814DB /* SpeechManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SpeechManager.m; sourceTree = "<group>"; };
 		8E91A3B305B8B5F3002814DB /* SpeechManager.h */ = {isa = PBXFileReference; fileEncoding = 18446744071562067968; lastKnownFileType = sourcecode.c.h; path = SpeechManager.h; sourceTree = "<group>"; };
 		8EABC0A605B9723C001DBE4D /* sound_button_disabled.tif */ = {isa = PBXFileReference; lastKnownFileType = image.tiff; path = sound_button_disabled.tif; sourceTree = "<group>"; };
 		8EABC0CC05B989B2001DBE4D /* ResultView.h */ = {isa = PBXFileReference; fileEncoding = 18446744071562067968; lastKnownFileType = sourcecode.c.h; path = ResultView.h; sourceTree = "<group>"; };
@@ -118,7 +118,7 @@
 		8EABC4C505B9DEC3001DBE4D /* StickyBackgroundView.h */ = {isa = PBXFileReference; fileEncoding = 18446744071562067968; lastKnownFileType = sourcecode.c.h; path = StickyBackgroundView.h; sourceTree = "<group>"; };
 		8EB9F0FB066CA3330065D189 /* Japanese */ = {isa = PBXFileReference; lastKnownFileType = wrapper.nib; name = Japanese; path = Japanese.lproj/MainMenu.nib; sourceTree = "<group>"; };
 		8EB9F123066CA8EE0065D189 /* Japanese */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; name = Japanese; path = Japanese.lproj/Localizable.strings; sourceTree = "<group>"; };
-		8EB9F126066CA9E40065D189 /* Japanese */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Japanese; path = Japanese.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		8EB9F126066CA9E40065D189 /* Japanese */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; name = Japanese; path = Japanese.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		8EB9F127066CAD320065D189 /* NSTextViewWithLinks.m */ = {isa = PBXFileReference; fileEncoding = 18446744071562067968; lastKnownFileType = sourcecode.c.objc; path = NSTextViewWithLinks.m; sourceTree = "<group>"; };
 		8EB9F128066CAD320065D189 /* NSTextViewWithLinks.h */ = {isa = PBXFileReference; fileEncoding = 18446744071562067968; lastKnownFileType = sourcecode.c.h; path = NSTextViewWithLinks.h; sourceTree = "<group>"; };
 		8EC657F105B86505002EA89B /* metal_resize.tif */ = {isa = PBXFileReference; lastKnownFileType = image.tiff; path = metal_resize.tif; sourceTree = "<group>"; };

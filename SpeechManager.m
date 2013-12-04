@@ -9,11 +9,11 @@
 #import "SpeechManager.h"
 
 
-//  ‰p•¶ƒeƒLƒXƒg“Ç‚İã‚°‹@”\‚ğƒTƒ|[ƒg‚·‚é‚½‚ß‚ÌƒNƒ‰ƒXB
+//  è‹±æ–‡ãƒ†ã‚­ã‚¹ãƒˆèª­ã¿ä¸Šã’æ©Ÿèƒ½ã‚’ã‚µãƒãƒ¼ãƒˆã™ã‚‹ãŸã‚ã®ã‚¯ãƒ©ã‚¹ã€‚
 @implementation SpeechManager
 
-// ‰Šú‰»
-// stopMode ‚É‚ÍAkImmediateAkEndOfWordAkEndOfSentence‚Ì‚¢‚¸‚ê‚©‚ğw’è‚·‚é
+// åˆæœŸåŒ–
+// stopMode ã«ã¯ã€kImmediateã€kEndOfWordã€kEndOfSentenceã®ã„ãšã‚Œã‹ã‚’æŒ‡å®šã™ã‚‹
 - (id)initWithStopMode:(long)stopMode_
 		target:(id)target_
 		speakingStartedMethod:(SEL)speakingStartedMethod_
@@ -38,7 +38,7 @@
 	return self;
 }
 
-// ƒNƒŠ[ƒ“ƒAƒbƒv
+// ã‚¯ãƒªãƒ¼ãƒ³ã‚¢ãƒƒãƒ—
 - (void)dealloc
 {
 	if (isSpeaking) {
@@ -50,25 +50,25 @@
 	[super dealloc];
 }
 
-// ƒXƒs[ƒ`ƒ`ƒƒƒ“ƒlƒ‹‚Ì¶¬
+// ã‚¹ãƒ”ãƒ¼ãƒãƒãƒ£ãƒ³ãƒãƒ«ã®ç”Ÿæˆ
 - (BOOL)createSpeechChannel
 {
     OSErr error;
 
-	// ƒXƒs[ƒ`ƒ`ƒƒƒ“ƒlƒ‹‚Ì¶¬
+	// ã‚¹ãƒ”ãƒ¼ãƒãƒãƒ£ãƒ³ãƒãƒ«ã®ç”Ÿæˆ
 	error = NewSpeechChannel(NULL, &speechChannel);
 	if (error != noErr) {
 		[self setError:error pos:-1];
 		return NO;
 	}
     
-	// ƒR[ƒ‹ƒoƒbƒNŠÖ”‚©‚ç‚±‚ÌƒNƒ‰ƒX‚ÉƒAƒNƒZƒX‚·‚é‚½‚ß‚ÉARefCon ‚É‚±‚ÌƒNƒ‰ƒX‚Ìƒ|ƒCƒ“ƒ^‚ğİ’è‚µ‚Ä‚¨‚­
+	// ã‚³ãƒ¼ãƒ«ãƒãƒƒã‚¯é–¢æ•°ã‹ã‚‰ã“ã®ã‚¯ãƒ©ã‚¹ã«ã‚¢ã‚¯ã‚»ã‚¹ã™ã‚‹ãŸã‚ã«ã€RefCon ã«ã“ã®ã‚¯ãƒ©ã‚¹ã®ãƒã‚¤ãƒ³ã‚¿ã‚’è¨­å®šã—ã¦ãŠã
 	error = SetSpeechInfo(speechChannel, soRefCon, (Ptr) self);
 	if (error != noErr) {
 		return NO;
 	}
 
-	// ˆÈ‰ºAŠeíƒR[ƒ‹ƒoƒbƒN‚ÌƒZƒbƒg
+	// ä»¥ä¸‹ã€å„ç¨®ã‚³ãƒ¼ãƒ«ãƒãƒƒã‚¯ã®ã‚»ãƒƒãƒˆ
 	error = SetSpeechInfo(speechChannel, soSpeechDoneCallBack, SpeechDoneCallBackProc);
 	if (error != noErr) {
 		return NO;
@@ -89,21 +89,21 @@
     return YES;
 }
 
-// ƒeƒLƒXƒg“Ç‚İã‚°‚ÌŠJn
+// ãƒ†ã‚­ã‚¹ãƒˆèª­ã¿ä¸Šã’ã®é–‹å§‹
 - (void)speakText:(NSString *)text
 {
 	OSErr error;
 	NSString *speakableText;
 
-	// “Ç‚İã‚°’†‚Å‚ ‚ê‚Î’â~‚µ‚Ä‚©‚çÄ¶‚ğs‚¤
+	// èª­ã¿ä¸Šã’ä¸­ã§ã‚ã‚Œã°åœæ­¢ã—ã¦ã‹ã‚‰å†ç”Ÿã‚’è¡Œã†
 	if (isSpeaking) {
 		[self stopSpeaking];
 	}
 
-	// “Ç‚İã‚°‚ª‚Å‚«‚é•¶š‚Ì‚İ‚É•ÏŠ·‚·‚é
+	// èª­ã¿ä¸Šã’ãŒã§ãã‚‹æ–‡å­—ã®ã¿ã«å¤‰æ›ã™ã‚‹
 	speakableText = [self convertToSpeakableText:text];
 
-	// “Ç‚İã‚°ŠJn
+	// èª­ã¿ä¸Šã’é–‹å§‹
 	error = SpeakText(
 			speechChannel, [speakableText cString], [speakableText cStringLength]);
 	if (error != noErr) {
@@ -113,7 +113,7 @@
 	}
 }
 
-// “Ç‚İã‚°‚Ì’â~
+// èª­ã¿ä¸Šã’ã®åœæ­¢
 - (void)stopSpeaking
 {
 	OSErr error;
@@ -130,7 +130,7 @@
 	}
 }
 
-// —^‚¦‚ç‚ê‚½ƒeƒLƒXƒg‚ğA“Ç‚İã‚°‰Â”\‚ÈƒeƒLƒXƒg‚É•ÏŠ·‚·‚é
+// ä¸ãˆã‚‰ã‚ŒãŸãƒ†ã‚­ã‚¹ãƒˆã‚’ã€èª­ã¿ä¸Šã’å¯èƒ½ãªãƒ†ã‚­ã‚¹ãƒˆã«å¤‰æ›ã™ã‚‹
 - (NSString *)convertToSpeakableText:(NSString *)text
 {
 	int i;
@@ -143,12 +143,12 @@
 	BOOL level = NO;
 	[text getCharacters:fromBuffer];
 	for (i = 0; i < [text length]; i++) {
-		// u{}v‚Æuyzv‚ÌŠÔ‚Ì•¶š‚Í“Ç‚İ”ò‚Î‚·
+		// ã€Œ{}ã€ã¨ã€Œã€ã€‘ã€ã®é–“ã®æ–‡å­—ã¯èª­ã¿é£›ã°ã™
 		if (!pass && (fromBuffer[i] == 0x7b || fromBuffer[i] == 0x3010)) {
 			pass = YES;
-			// “Ç‚İã‚°‚ç‚ê‚È‚¢•¶š‚ÍAu/v‚É•ÏŠ·‚·‚é‚ÆƒXƒLƒbƒv‚³‚ê‚é
+			// èª­ã¿ä¸Šã’ã‚‰ã‚Œãªã„æ–‡å­—ã¯ã€ã€Œ/ã€ã«å¤‰æ›ã™ã‚‹ã¨ã‚¹ã‚­ãƒƒãƒ—ã•ã‚Œã‚‹
 			toBuffer[i] = 0x2f;
-			// ”­‰¹‹L†‚à“Ç‚İ”ò‚Î‚·
+			// ç™ºéŸ³è¨˜å·ã‚‚èª­ã¿é£›ã°ã™
 			if (i + 3 < [text length]) {
 				c[0] = fromBuffer[i];
 				c[1] = fromBuffer[i+1];
@@ -180,16 +180,16 @@
 				pass = NO;
 			}
 		}
-		// “ú–{Œê‚Í“Ç‚ß‚È‚¢
+		// æ—¥æœ¬èªã¯èª­ã‚ãªã„
 		else if (fromBuffer[i] > 0x7e) {
-			// “Ç‚İã‚°‚ç‚ê‚È‚¢•¶š‚ÍAu/v‚É•ÏŠ·‚·‚é‚ÆƒXƒLƒbƒv‚³‚ê‚é
+			// èª­ã¿ä¸Šã’ã‚‰ã‚Œãªã„æ–‡å­—ã¯ã€ã€Œ/ã€ã«å¤‰æ›ã™ã‚‹ã¨ã‚¹ã‚­ãƒƒãƒ—ã•ã‚Œã‚‹
 			toBuffer[i] = 0x2f;
 		}
-		// u/v‚Í‹æØ‚è•¶š‚Æ‚µ‚Äg‚í‚ê‚Ä‚¢‚éBu;v‚É•ÏŠ·‚µ‚Ä‹æØ‚è‚ğ“Ç‚Ü‚¹‚é
+		// ã€Œ/ã€ã¯åŒºåˆ‡ã‚Šæ–‡å­—ã¨ã—ã¦ä½¿ã‚ã‚Œã¦ã„ã‚‹ã€‚ã€Œ;ã€ã«å¤‰æ›ã—ã¦åŒºåˆ‡ã‚Šã‚’èª­ã¾ã›ã‚‹
 		else if (fromBuffer[i] == 0x2f) {
 			toBuffer[i] = 0x3b;
 		}
-		// “Ç‚ß‚é•¶š
+		// èª­ã‚ã‚‹æ–‡å­—
 		else {
 			toBuffer[i] = fromBuffer[i];
 		}
@@ -200,7 +200,7 @@
 	return modifiedText;
 }
 
-// “Ç‚İã‚°‚ÌŠJn/I—¹‚Éƒtƒ‰ƒO‚ğƒZƒbƒg‚µAƒR[ƒ‹ƒoƒbƒN‚ÌƒZƒŒƒNƒ^‚ğƒgƒŠƒK‚·‚é
+// èª­ã¿ä¸Šã’ã®é–‹å§‹/çµ‚äº†æ™‚ã«ãƒ•ãƒ©ã‚°ã‚’ã‚»ãƒƒãƒˆã—ã€ã‚³ãƒ¼ãƒ«ãƒãƒƒã‚¯ã®ã‚»ãƒ¬ã‚¯ã‚¿ã‚’ãƒˆãƒªã‚¬ã™ã‚‹
 - (void)setSpeaking:(BOOL)flag
 {
 	isSpeaking = flag;
@@ -215,7 +215,7 @@
 	}
 }
 
-// ‚±‚ê‚©‚ç“Ç‚İã‚°‚éêŠ‚ğcurrentPos‚ÉƒZƒbƒg‚µ‚ÄAƒR[ƒ‹ƒoƒbƒN‚ÌƒZƒŒƒNƒ^‚ğƒgƒŠƒK‚·‚é
+// ã“ã‚Œã‹ã‚‰èª­ã¿ä¸Šã’ã‚‹å ´æ‰€ã‚’currentPosã«ã‚»ãƒƒãƒˆã—ã¦ã€ã‚³ãƒ¼ãƒ«ãƒãƒƒã‚¯ã®ã‚»ãƒ¬ã‚¯ã‚¿ã‚’ãƒˆãƒªã‚¬ã™ã‚‹
 - (void)setCurrentSpeakingPos:(int)pos length:(int)length
 {
 	currentPos = pos;
@@ -225,8 +225,8 @@
 	}
 }
 
-// lastError•Ï”‚ÉƒGƒ‰[”Ô†‚ğƒZƒbƒg‚µAƒGƒ‰[‚ª‹N‚±‚Á‚½êŠ‚ğcurrentPos‚ÉƒZƒbƒg‚µ‚ÄA
-// ƒGƒ‰[ê—p‚ÌƒR[ƒ‹ƒoƒbƒN‚ÌƒZƒŒƒNƒ^‚ğƒgƒŠƒK‚·‚é
+// lastErrorå¤‰æ•°ã«ã‚¨ãƒ©ãƒ¼ç•ªå·ã‚’ã‚»ãƒƒãƒˆã—ã€ã‚¨ãƒ©ãƒ¼ãŒèµ·ã“ã£ãŸå ´æ‰€ã‚’currentPosã«ã‚»ãƒƒãƒˆã—ã¦ã€
+// ã‚¨ãƒ©ãƒ¼å°‚ç”¨ã®ã‚³ãƒ¼ãƒ«ãƒãƒƒã‚¯ã®ã‚»ãƒ¬ã‚¯ã‚¿ã‚’ãƒˆãƒªã‚¬ã™ã‚‹
 - (void)setError:(OSErr)error pos:(int)pos
 {
 	lastError = error;
@@ -237,25 +237,25 @@
 	}
 }
 
-// “Ç‚İã‚°’†‚©‚Ç‚¤‚©
+// èª­ã¿ä¸Šã’ä¸­ã‹ã©ã†ã‹
 - (BOOL)isSpeaking
 {
 	return isSpeaking;
 }
 
-// ƒJƒŒƒ“ƒg‚Ì“Ç‚İã‚°ˆÊ’u
+// ã‚«ãƒ¬ãƒ³ãƒˆã®èª­ã¿ä¸Šã’ä½ç½®
 - (int)currentPos
 {
 	return currentPos;
 }
 
-// ƒJƒŒƒ“ƒg‚Ì“Ç‚İã‚°•¶š—ñ‚Ì’·‚³
+// ã‚«ãƒ¬ãƒ³ãƒˆã®èª­ã¿ä¸Šã’æ–‡å­—åˆ—ã®é•·ã•
 - (int)currentLength
 {
 	return currentLength;
 }
 
-// ƒGƒ‰[”Ô†
+// ã‚¨ãƒ©ãƒ¼ç•ªå·
 - (OSErr)lastError
 {
 	return lastError;
@@ -264,10 +264,10 @@
 @end
 
 
-///// ˆÈ‰ºAŠeíƒR[ƒ‹ƒoƒbƒNƒ‹[ƒ`ƒ“
+///// ä»¥ä¸‹ã€å„ç¨®ã‚³ãƒ¼ãƒ«ãƒãƒƒã‚¯ãƒ«ãƒ¼ãƒãƒ³
 
-// ƒJƒŒƒ“ƒg‚Ì’PŒê‚ªˆ—‚³‚ê‚½‚Æ‚«‚ÉƒR[ƒ‹‚³‚ê‚éB
-// ’Ç‰Á‚ÌƒeƒLƒXƒg‚ğ“n‚µ‚Äˆ—‚ğŒp‘±‚³‚¹‚é‚±‚Æ‚à‚Å‚«‚éB
+// ã‚«ãƒ¬ãƒ³ãƒˆã®å˜èªãŒå‡¦ç†ã•ã‚ŒãŸã¨ãã«ã‚³ãƒ¼ãƒ«ã•ã‚Œã‚‹ã€‚
+// è¿½åŠ ã®ãƒ†ã‚­ã‚¹ãƒˆã‚’æ¸¡ã—ã¦å‡¦ç†ã‚’ç¶™ç¶šã•ã›ã‚‹ã“ã¨ã‚‚ã§ãã‚‹ã€‚
 pascal void TextDoneCallBackProc(
 		SpeechChannel inSpeechChannel, long inRefCon,
 		const void **nextBuf, unsigned long *byteLen, long *controlFlags)
@@ -275,7 +275,7 @@ pascal void TextDoneCallBackProc(
 	*nextBuf = NULL;
 }
 
-// ’PŒê‚ğ¶¬‚µ‚æ‚¤‚Æ‚·‚é–ˆ‚ÉAV‚µ‚¢ˆÊ’u‚Æ’·‚³‚ğˆø”‚É“ü‚ê‚ÄƒR[ƒ‹‚³‚ê‚éB
+// å˜èªã‚’ç”Ÿæˆã—ã‚ˆã†ã¨ã™ã‚‹æ¯ã«ã€æ–°ã—ã„ä½ç½®ã¨é•·ã•ã‚’å¼•æ•°ã«å…¥ã‚Œã¦ã‚³ãƒ¼ãƒ«ã•ã‚Œã‚‹ã€‚
 pascal void WordCallBackProc(
 	SpeechChannel inSpeechChannel, long inRefCon, long inWordPos, short inWordLen)
 {
@@ -285,7 +285,7 @@ pascal void WordCallBackProc(
 	[pool release];
 }
 
-// ‚·‚×‚Ä‚Ì“Ç‚İã‚°‚ªŠ®—¹‚µ‚½‚Æ‚«‚ÉƒR[ƒ‹‚³‚ê‚é
+// ã™ã¹ã¦ã®èª­ã¿ä¸Šã’ãŒå®Œäº†ã—ãŸã¨ãã«ã‚³ãƒ¼ãƒ«ã•ã‚Œã‚‹
 pascal void SpeechDoneCallBackProc(SpeechChannel inSpeechChannel, long inRefCon)
 {
 	NSAutoreleasePool *pool = [[NSAutoreleasePool alloc] init];
@@ -294,7 +294,7 @@ pascal void SpeechDoneCallBackProc(SpeechChannel inSpeechChannel, long inRefCon)
 	[pool release];
 }
 
-// ƒeƒLƒXƒg“Ç‚İã‚°’†‚ÉƒGƒ‰[‚ª‹N‚±‚Á‚½ê‡‚ÉƒR[ƒ‹‚³‚ê‚é
+// ãƒ†ã‚­ã‚¹ãƒˆèª­ã¿ä¸Šã’ä¸­ã«ã‚¨ãƒ©ãƒ¼ãŒèµ·ã“ã£ãŸå ´åˆã«ã‚³ãƒ¼ãƒ«ã•ã‚Œã‚‹
 pascal void ErrorCallBackProc(
 	SpeechChannel inSpeechChannel, long inRefCon, OSErr inError, long inBytePos)
 {

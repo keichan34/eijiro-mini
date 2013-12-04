@@ -119,8 +119,8 @@ void outputRect(NSString *str, NSRect rect) {
 		NSRect screenRect = [currentScreen frame];
 		NSRect visibleScreenRect = [currentScreen visibleFrame];
 		
-		if (screenRect.origin.x == 0 && frameRect.origin.x < 0 ||
-				!commandKeyPressed && abs(frameRect.origin.x - screenRect.origin.x) < 12) {
+		if ((screenRect.origin.x == 0 && frameRect.origin.x < 0) ||
+				(!commandKeyPressed && abs(frameRect.origin.x - screenRect.origin.x) < 12)) {
 			frameRect.origin.x = screenRect.origin.x;
 		} else if (!commandKeyPressed && abs(frameRect.origin.x+frameRect.size.width-(screenRect.origin.x+screenRect.size.width)) < 12) {
 			frameRect.origin.x = screenRect.origin.x + screenRect.size.width - frameRect.size.width;
@@ -159,7 +159,7 @@ void outputRect(NSString *str, NSRect rect) {
 				}
 				// 画面上にくっつく場合
 				if (frameRect.origin.y + frameRect.size.height > visibleScreenRect.origin.y + visibleScreenRect.size.height ||
-					!commandKeyPressed && abs(frameRect.origin.y + frameRect.size.height - (visibleScreenRect.origin.y + visibleScreenRect.size.height)) < 12)
+					(!commandKeyPressed && abs(frameRect.origin.y + frameRect.size.height - (visibleScreenRect.origin.y + visibleScreenRect.size.height)) < 12))
 				{
 					frameRect.origin.y = visibleScreenRect.origin.y + visibleScreenRect.size.height - frameRect.size.height;
 				}
@@ -169,7 +169,7 @@ void outputRect(NSString *str, NSRect rect) {
 		else {
 			// 画面下にくっつく場合
 			if (frameRect.origin.y + frameRect.size.height - 28 < screenRect.origin.y ||
-				!commandKeyPressed && abs(frameRect.origin.y + frameRect.size.height - 28) < 12) {
+				(!commandKeyPressed && abs(frameRect.origin.y + frameRect.size.height - 28) < 12)) {
 				frameRect.origin.y = screenRect.origin.y + 28 - frameRect.size.height;
 			}
 			// 下のDockにくっつく場合
@@ -179,7 +179,7 @@ void outputRect(NSString *str, NSRect rect) {
 			}
 			// 画面上にくっつく場合
 			else if (frameRect.origin.y + frameRect.size.height > visibleScreenRect.origin.y + visibleScreenRect.size.height ||
-					   !commandKeyPressed && abs(frameRect.origin.y + frameRect.size.height - (visibleScreenRect.origin.y + visibleScreenRect.size.height)) < 12) {
+					   (!commandKeyPressed && abs(frameRect.origin.y + frameRect.size.height - (visibleScreenRect.origin.y + visibleScreenRect.size.height)) < 12)) {
 				frameRect.origin.y = visibleScreenRect.origin.y + visibleScreenRect.size.height - frameRect.size.height;
 			}
 		}

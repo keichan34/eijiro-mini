@@ -98,7 +98,7 @@
         {
             NSCursor		*cursor;
             NSRectArray		rects;
-            unsigned int	rectCount, rectIndex;
+            NSUInteger  	rectCount, rectIndex;
             NSRect			oneRect;
 
             //	Figure what cursor to show over this link.
