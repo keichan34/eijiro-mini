@@ -455,7 +455,7 @@ static ApplicationManager *_instance;
 		middlePos = startPos + (endPos - startPos) / 2;
 		// Move backword until return code or start position appears
 		while (middlePos > startPos &&
-			   (p[middlePos-1] != 0x0a && p[middlePos-1] != 0x0d ||
+			   ((p[middlePos-1] != 0x0a && p[middlePos-1] != 0x0d) ||
 				p[middlePos] == 0x0a || p[middlePos] == 0x0d)) {
 			middlePos--;
 		}
@@ -514,7 +514,7 @@ static ApplicationManager *_instance;
 			return 0;
 		}
 		while (startPos > 0 &&
-			   (p[startPos-1] != 0x0a && p[startPos-1] != 0x0d ||
+			   ((p[startPos-1] != 0x0a && p[startPos-1] != 0x0d) ||
 				(p[startPos] == 0x0a || p[startPos] == 0x0d))) {
 			startPos--;
 		}
@@ -704,7 +704,7 @@ static ApplicationManager *_instance;
 - (IBAction)makeNewSticky:(id)sender {
 	NSDocumentController *documentController =
 		[NSDocumentController sharedDocumentController];
-	StickyDocument *doc = [documentController openUntitledDocumentOfType:@"StickyDocument" display:NO];
+    StickyDocument *doc = [documentController openUntitledDocumentAndDisplay:NO error:nil];
 	[doc setTitle:[searchWordField stringValue]];
 	[doc setSearchWindow:mainWindow];
 	[doc setAttrStr:[resultView attrStr]];
@@ -759,12 +759,14 @@ static ApplicationManager *_instance;
 		searchDir = [reijiroPath stringByDeletingLastPathComponent];
 	}
 
-	int ret = [openPanel runModalForDirectory:searchDir
-										 file:[eijiroPath lastPathComponent]
-										types:[NSArray arrayWithObject:@"txt"]];
+    openPanel.directoryURL = [NSURL URLWithString:searchDir];
+    openPanel.allowedFileTypes = [NSArray arrayWithObject:@"txt"];
+
+	NSInteger ret = [openPanel runModal];
+
 	if (ret == NSOKButton) {
 		NSUserDefaults *defaults = [userDefaultsController defaults];
-		eijiroPath = [openPanel filename];
+		eijiroPath = [[openPanel URL] path];
 		[eijiroPathField setStringValue:eijiroPath];
 		[defaults setObject:eijiroPath forKey:@"eijiroPath"];
 		[self complementPathesFromOnePath:eijiroPath];
@@ -792,15 +794,18 @@ static ApplicationManager *_instance;
 	} else if (reijiroPath) {
 		searchDir = [reijiroPath stringByDeletingLastPathComponent];
 	}
-	
-	int ret = [openPanel runModalForDirectory:searchDir
-										 file:[ryakugoroPath lastPathComponent]
-										types:[NSArray arrayWithObject:@"txt"]];
+
+
+    openPanel.directoryURL = [NSURL URLWithString:searchDir];
+    openPanel.allowedFileTypes = [NSArray arrayWithObject:@"txt"];
+
+	NSInteger ret = [openPanel runModal];
+
 	if (ret == NSOKButton) {
 		NSUserDefaultsController *userDefaultsController =
 		[NSUserDefaultsController sharedUserDefaultsController];
 		NSUserDefaults *defaults = [userDefaultsController defaults];
-		ryakugoroPath = [openPanel filename];
+		ryakugoroPath = [[openPanel URL] path];
 		[ryakugoroPathField setStringValue:ryakugoroPath];
 		[defaults setObject:ryakugoroPath forKey:@"ryakugoroPath"];
 		[self complementPathesFromOnePath:ryakugoroPath];
@@ -828,15 +833,17 @@ static ApplicationManager *_instance;
 	} else if (reijiroPath) {
 		searchDir = [reijiroPath stringByDeletingLastPathComponent];
 	}
-	
-	int ret = [openPanel runModalForDirectory:searchDir
-										 file:[waeijiroPath lastPathComponent]
-										types:[NSArray arrayWithObject:@"txt"]];
+
+    openPanel.directoryURL = [NSURL URLWithString:searchDir];
+    openPanel.allowedFileTypes = [NSArray arrayWithObject:@"txt"];
+
+	NSInteger ret = [openPanel runModal];
+
 	if (ret == NSOKButton) {
 		NSUserDefaultsController *userDefaultsController =
 		[NSUserDefaultsController sharedUserDefaultsController];
 		NSUserDefaults *defaults = [userDefaultsController defaults];
-		waeijiroPath = [openPanel filename];
+		waeijiroPath = [[openPanel URL] path];
 		[waeijiroPathField setStringValue:waeijiroPath];
 		[defaults setObject:waeijiroPath forKey:@"waeijiroPath"];
 		[self complementPathesFromOnePath:waeijiroPath];
@@ -864,15 +871,17 @@ static ApplicationManager *_instance;
 	} else if (reijiroPath) {
 		searchDir = [reijiroPath stringByDeletingLastPathComponent];
 	}
-	
-	int ret = [openPanel runModalForDirectory:searchDir
-										 file:[reijiroPath lastPathComponent]
-										types:[NSArray arrayWithObject:@"txt"]];
+
+    openPanel.directoryURL = [NSURL URLWithString:searchDir];
+    openPanel.allowedFileTypes = [NSArray arrayWithObject:@"txt"];
+
+	NSInteger ret = [openPanel runModal];
+
 	if (ret == NSOKButton) {
 		NSUserDefaultsController *userDefaultsController =
 		[NSUserDefaultsController sharedUserDefaultsController];
 		NSUserDefaults *defaults = [userDefaultsController defaults];
-		reijiroPath = [openPanel filename];
+		reijiroPath = [[openPanel URL] path];
 		[reijiroPathField setStringValue:reijiroPath];
 		[defaults setObject:reijiroPath forKey:@"reijiroPath"];
 		[self complementPathesFromOnePath:reijiroPath];
@@ -975,6 +984,7 @@ static ApplicationManager *_instance;
 	[defaults setObject:NSStringFromRect([mainWindow frame]) forKey:@"WINDOW_FRAME"];
 }
 
+/*
 - (BOOL)validateMenuItem:(id <NSMenuItem>)menuItem {
 	switch ([menuItem tag]) {
 		// New Sticky
@@ -999,6 +1009,7 @@ static ApplicationManager *_instance;
 	}
 	return YES;
 }
+ */
 
 - (IBAction)closeSticky:(id)sender {
 	if ([NSApp keyWindow] != mainWindow) {
@@ -1399,6 +1410,10 @@ static ApplicationManager *_instance;
 		//		break;
 	}
 	return ret;
+}
+
+- (IBAction)resetPosition:(id)sender {
+    [mainWindow setFrameTopLeftPoint:NSMakePoint(10, 40)];
 }
 
 @end

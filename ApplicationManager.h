@@ -74,6 +74,8 @@
 - (IBAction)goPrevious:(id)sender;
 - (IBAction)goAfter:(id)sender;
 
+- (IBAction)resetPosition:(id)sender;
+
 - (void)searchForWord:(NSString *)searchWord;
 - (int)binarySearchForWord:(NSString *)searchWord
 			searchWordData:(NSData *)searchWordData

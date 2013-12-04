@@ -8,8 +8,8 @@
 
 #import "StringUtil.h"
 
-inline BOOL isFirst2BytesCharacter(unsigned char c) {
-	return (c >= 0x80 && c <= 0x9f || c >= 0xe0 && c <= 0xfc);
+BOOL isFirst2BytesCharacter(unsigned char c) {
+	return ((c >= 0x80 && c <= 0x9f) || (c >= 0xe0 && c <= 0xfc));
 }
 
 BOOL isEnglishWord(NSString *str, BOOL *isAllCapital) {

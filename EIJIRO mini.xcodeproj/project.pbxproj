@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 42;
+	objectVersion = 46;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -67,32 +67,6 @@
 		8ECEFC0A05B969E300EFACE5 /* back_button_disabled.tif in Resources */ = {isa = PBXBuildFile; fileRef = 8ECEFC0905B969E300EFACE5 /* back_button_disabled.tif */; };
 /* End PBXBuildFile section */
 
-/* Begin PBXBuildStyle section */
-		4A9504CCFFE6A4B311CA0CBA /* Development */ = {
-			isa = PBXBuildStyle;
-			buildSettings = {
-				COPY_PHASE_STRIP = NO;
-				DEBUGGING_SYMBOLS = YES;
-				GCC_DYNAMIC_NO_PIC = NO;
-				GCC_ENABLE_FIX_AND_CONTINUE = YES;
-				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
-				GCC_OPTIMIZATION_LEVEL = 0;
-				OPTIMIZATION_CFLAGS = "-O0";
-				ZERO_LINK = YES;
-			};
-			name = Development;
-		};
-		4A9504CDFFE6A4B311CA0CBA /* Deployment */ = {
-			isa = PBXBuildStyle;
-			buildSettings = {
-				COPY_PHASE_STRIP = YES;
-				GCC_ENABLE_FIX_AND_CONTINUE = NO;
-				ZERO_LINK = NO;
-			};
-			name = Deployment;
-		};
-/* End PBXBuildStyle section */
-
 /* Begin PBXFileReference section */
 		089C165DFE840E0CC02AAC07 /* English */ = {isa = PBXFileReference; fileEncoding = 10; lastKnownFileType = text.plist.strings; name = English; path = English.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		29B97316FDCFA39411CA2CEA /* main.m */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -100,53 +74,53 @@
 		29B97324FDCFA39411CA2CEA /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = /System/Library/Frameworks/AppKit.framework; sourceTree = "<absolute>"; };
 		29B97325FDCFA39411CA2CEA /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = /System/Library/Frameworks/Foundation.framework; sourceTree = "<absolute>"; };
 		32CA4F630368D1EE00C91783 /* EIJIRO mini_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "EIJIRO mini_Prefix.pch"; sourceTree = "<group>"; };
-		8D1107310486CEB800E47090 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = Info.plist; sourceTree = "<group>"; };
+		8D1107310486CEB800E47090 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8D1107320486CEB800E47090 /* EIJIRO mini.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "EIJIRO mini.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		8E0EE6BE066A2EDC008A1C0D /* AppIcon.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = AppIcon.icns; sourceTree = "<group>"; };
-		8E3017A705B6ADDD00C678F6 /* ApplicationManager.h */ = {isa = PBXFileReference; fileEncoding = "-2147483647"; lastKnownFileType = sourcecode.c.h; path = ApplicationManager.h; sourceTree = "<group>"; };
-		8E3017A805B6ADDD00C678F6 /* ApplicationManager.m */ = {isa = PBXFileReference; fileEncoding = "-2147483647"; lastKnownFileType = sourcecode.c.objc; path = ApplicationManager.m; sourceTree = "<group>"; };
-		8E3017B105B6AE7E00C678F6 /* MEPanel.m */ = {isa = PBXFileReference; fileEncoding = "-2147483647"; lastKnownFileType = sourcecode.c.objc; path = MEPanel.m; sourceTree = "<group>"; };
-		8E3017B205B6AE7E00C678F6 /* MEPanel.h */ = {isa = PBXFileReference; fileEncoding = "-2147483647"; lastKnownFileType = sourcecode.c.h; path = MEPanel.h; sourceTree = "<group>"; };
+		8E3017A705B6ADDD00C678F6 /* ApplicationManager.h */ = {isa = PBXFileReference; fileEncoding = 18446744071562067968; lastKnownFileType = sourcecode.c.h; path = ApplicationManager.h; sourceTree = "<group>"; };
+		8E3017A805B6ADDD00C678F6 /* ApplicationManager.m */ = {isa = PBXFileReference; fileEncoding = 18446744071562067968; lastKnownFileType = sourcecode.c.objc; path = ApplicationManager.m; sourceTree = "<group>"; };
+		8E3017B105B6AE7E00C678F6 /* MEPanel.m */ = {isa = PBXFileReference; fileEncoding = 18446744071562067968; lastKnownFileType = sourcecode.c.objc; path = MEPanel.m; sourceTree = "<group>"; };
+		8E3017B205B6AE7E00C678F6 /* MEPanel.h */ = {isa = PBXFileReference; fileEncoding = 18446744071562067968; lastKnownFileType = sourcecode.c.h; path = MEPanel.h; sourceTree = "<group>"; };
 		8E45C1D105C6AC4B00AEF010 /* StringUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StringUtil.h; sourceTree = "<group>"; };
 		8E45C1D205C6AC4B00AEF010 /* StringUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StringUtil.m; sourceTree = "<group>"; };
-		8E58C4B605B6CE3500D6CAA3 /* ResizeView.h */ = {isa = PBXFileReference; fileEncoding = "-2147483647"; lastKnownFileType = sourcecode.c.h; path = ResizeView.h; sourceTree = "<group>"; };
+		8E58C4B605B6CE3500D6CAA3 /* ResizeView.h */ = {isa = PBXFileReference; fileEncoding = 18446744071562067968; lastKnownFileType = sourcecode.c.h; path = ResizeView.h; sourceTree = "<group>"; };
 		8E58C4B705B6CE3500D6CAA3 /* ResizeView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ResizeView.m; sourceTree = "<group>"; };
-		8E58C4DB05B6D8F000D6CAA3 /* BackgroundView.h */ = {isa = PBXFileReference; fileEncoding = "-2147483647"; lastKnownFileType = sourcecode.c.h; path = BackgroundView.h; sourceTree = "<group>"; };
+		8E58C4DB05B6D8F000D6CAA3 /* BackgroundView.h */ = {isa = PBXFileReference; fileEncoding = 18446744071562067968; lastKnownFileType = sourcecode.c.h; path = BackgroundView.h; sourceTree = "<group>"; };
 		8E58C4DC05B6D8F000D6CAA3 /* BackgroundView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BackgroundView.m; sourceTree = "<group>"; };
 		8E58C54005B6EAF900D6CAA3 /* metal_back.tif */ = {isa = PBXFileReference; lastKnownFileType = image.tiff; path = metal_back.tif; sourceTree = "<group>"; };
 		8E58C59F05B6F64B00D6CAA3 /* metal_light.tif */ = {isa = PBXFileReference; lastKnownFileType = image.tiff; path = metal_light.tif; sourceTree = "<group>"; };
-		8E58C5BE05B7076D00D6CAA3 /* MESearchField.h */ = {isa = PBXFileReference; fileEncoding = "-2147483647"; lastKnownFileType = sourcecode.c.h; path = MESearchField.h; sourceTree = "<group>"; };
-		8E58C5BF05B7076D00D6CAA3 /* MESearchField.m */ = {isa = PBXFileReference; fileEncoding = "-2147483647"; lastKnownFileType = sourcecode.c.objc; path = MESearchField.m; sourceTree = "<group>"; };
+		8E58C5BE05B7076D00D6CAA3 /* MESearchField.h */ = {isa = PBXFileReference; fileEncoding = 18446744071562067968; lastKnownFileType = sourcecode.c.h; path = MESearchField.h; sourceTree = "<group>"; };
+		8E58C5BF05B7076D00D6CAA3 /* MESearchField.m */ = {isa = PBXFileReference; fileEncoding = 18446744071562067968; lastKnownFileType = sourcecode.c.objc; path = MESearchField.m; sourceTree = "<group>"; };
 		8E58C61B05B70A4600D6CAA3 /* resize_indicator.tif */ = {isa = PBXFileReference; lastKnownFileType = image.tiff; path = resize_indicator.tif; sourceTree = "<group>"; };
-		8E91A3B205B8B5F3002814DB /* SpeechManager.m */ = {isa = PBXFileReference; fileEncoding = "-2147483647"; lastKnownFileType = sourcecode.c.objc; path = SpeechManager.m; sourceTree = "<group>"; };
-		8E91A3B305B8B5F3002814DB /* SpeechManager.h */ = {isa = PBXFileReference; fileEncoding = "-2147483647"; lastKnownFileType = sourcecode.c.h; path = SpeechManager.h; sourceTree = "<group>"; };
+		8E91A3B205B8B5F3002814DB /* SpeechManager.m */ = {isa = PBXFileReference; fileEncoding = 18446744071562067968; lastKnownFileType = sourcecode.c.objc; path = SpeechManager.m; sourceTree = "<group>"; };
+		8E91A3B305B8B5F3002814DB /* SpeechManager.h */ = {isa = PBXFileReference; fileEncoding = 18446744071562067968; lastKnownFileType = sourcecode.c.h; path = SpeechManager.h; sourceTree = "<group>"; };
 		8EABC0A605B9723C001DBE4D /* sound_button_disabled.tif */ = {isa = PBXFileReference; lastKnownFileType = image.tiff; path = sound_button_disabled.tif; sourceTree = "<group>"; };
-		8EABC0CC05B989B2001DBE4D /* ResultView.h */ = {isa = PBXFileReference; fileEncoding = "-2147483647"; lastKnownFileType = sourcecode.c.h; path = ResultView.h; sourceTree = "<group>"; };
-		8EABC0CD05B989B2001DBE4D /* ResultView.m */ = {isa = PBXFileReference; fileEncoding = "-2147483647"; lastKnownFileType = sourcecode.c.objc; path = ResultView.m; sourceTree = "<group>"; };
+		8EABC0CC05B989B2001DBE4D /* ResultView.h */ = {isa = PBXFileReference; fileEncoding = 18446744071562067968; lastKnownFileType = sourcecode.c.h; path = ResultView.h; sourceTree = "<group>"; };
+		8EABC0CD05B989B2001DBE4D /* ResultView.m */ = {isa = PBXFileReference; fileEncoding = 18446744071562067968; lastKnownFileType = sourcecode.c.objc; path = ResultView.m; sourceTree = "<group>"; };
 		8EABC0D005B98C6D001DBE4D /* StickyDocument.nib */ = {isa = PBXFileReference; lastKnownFileType = wrapper.nib; path = StickyDocument.nib; sourceTree = "<group>"; };
 		8EABC0D405B98CC1001DBE4D /* StickyDocument.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StickyDocument.h; sourceTree = "<group>"; };
 		8EABC0D505B98CC1001DBE4D /* StickyDocument.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StickyDocument.m; sourceTree = "<group>"; };
-		8EABC10A05B98F2A001DBE4D /* StickyWindow.h */ = {isa = PBXFileReference; fileEncoding = "-2147483647"; lastKnownFileType = sourcecode.c.h; path = StickyWindow.h; sourceTree = "<group>"; };
-		8EABC10B05B98F2A001DBE4D /* StickyWindow.m */ = {isa = PBXFileReference; fileEncoding = "-2147483647"; lastKnownFileType = sourcecode.c.objc; path = StickyWindow.m; sourceTree = "<group>"; };
-		8EABC11C05B9922F001DBE4D /* StickyView.h */ = {isa = PBXFileReference; fileEncoding = "-2147483647"; lastKnownFileType = sourcecode.c.h; path = StickyView.h; sourceTree = "<group>"; };
-		8EABC11D05B9922F001DBE4D /* StickyView.m */ = {isa = PBXFileReference; fileEncoding = "-2147483647"; lastKnownFileType = sourcecode.c.objc; path = StickyView.m; sourceTree = "<group>"; };
+		8EABC10A05B98F2A001DBE4D /* StickyWindow.h */ = {isa = PBXFileReference; fileEncoding = 18446744071562067968; lastKnownFileType = sourcecode.c.h; path = StickyWindow.h; sourceTree = "<group>"; };
+		8EABC10B05B98F2A001DBE4D /* StickyWindow.m */ = {isa = PBXFileReference; fileEncoding = 18446744071562067968; lastKnownFileType = sourcecode.c.objc; path = StickyWindow.m; sourceTree = "<group>"; };
+		8EABC11C05B9922F001DBE4D /* StickyView.h */ = {isa = PBXFileReference; fileEncoding = 18446744071562067968; lastKnownFileType = sourcecode.c.h; path = StickyView.h; sourceTree = "<group>"; };
+		8EABC11D05B9922F001DBE4D /* StickyView.m */ = {isa = PBXFileReference; fileEncoding = 18446744071562067968; lastKnownFileType = sourcecode.c.objc; path = StickyView.m; sourceTree = "<group>"; };
 		8EABC12205B994E3001DBE4D /* ControllableScroller.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ControllableScroller.h; sourceTree = "<group>"; };
 		8EABC12305B994E3001DBE4D /* ControllableScroller.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ControllableScroller.m; sourceTree = "<group>"; };
 		8EABC15405B99E12001DBE4D /* close_button_enabled.tif */ = {isa = PBXFileReference; lastKnownFileType = image.tiff; path = close_button_enabled.tif; sourceTree = "<group>"; };
 		8EABC15505B99E12001DBE4D /* close_button_pressed.tif */ = {isa = PBXFileReference; lastKnownFileType = image.tiff; path = close_button_pressed.tif; sourceTree = "<group>"; };
 		8EABC15605B99E12001DBE4D /* close_button.tif */ = {isa = PBXFileReference; lastKnownFileType = image.tiff; path = close_button.tif; sourceTree = "<group>"; };
 		8EABC30E05B9AF31001DBE4D /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = /System/Library/Frameworks/Cocoa.framework; sourceTree = "<absolute>"; };
-		8EABC31905B9B469001DBE4D /* DraggableView.h */ = {isa = PBXFileReference; fileEncoding = "-2147483647"; lastKnownFileType = sourcecode.c.h; path = DraggableView.h; sourceTree = "<group>"; };
-		8EABC31A05B9B469001DBE4D /* DraggableView.m */ = {isa = PBXFileReference; fileEncoding = "-2147483647"; lastKnownFileType = sourcecode.c.objc; path = DraggableView.m; sourceTree = "<group>"; };
-		8EABC31D05B9BC0D001DBE4D /* StickyTitleView.h */ = {isa = PBXFileReference; fileEncoding = "-2147483647"; lastKnownFileType = sourcecode.c.h; path = StickyTitleView.h; sourceTree = "<group>"; };
-		8EABC31E05B9BC0D001DBE4D /* StickyTitleView.m */ = {isa = PBXFileReference; fileEncoding = "-2147483647"; lastKnownFileType = sourcecode.c.objc; path = StickyTitleView.m; sourceTree = "<group>"; };
-		8EABC4C405B9DEC3001DBE4D /* StickyBackgroundView.m */ = {isa = PBXFileReference; fileEncoding = "-2147483647"; lastKnownFileType = sourcecode.c.objc; path = StickyBackgroundView.m; sourceTree = "<group>"; };
-		8EABC4C505B9DEC3001DBE4D /* StickyBackgroundView.h */ = {isa = PBXFileReference; fileEncoding = "-2147483647"; lastKnownFileType = sourcecode.c.h; path = StickyBackgroundView.h; sourceTree = "<group>"; };
+		8EABC31905B9B469001DBE4D /* DraggableView.h */ = {isa = PBXFileReference; fileEncoding = 18446744071562067968; lastKnownFileType = sourcecode.c.h; path = DraggableView.h; sourceTree = "<group>"; };
+		8EABC31A05B9B469001DBE4D /* DraggableView.m */ = {isa = PBXFileReference; fileEncoding = 18446744071562067968; lastKnownFileType = sourcecode.c.objc; path = DraggableView.m; sourceTree = "<group>"; };
+		8EABC31D05B9BC0D001DBE4D /* StickyTitleView.h */ = {isa = PBXFileReference; fileEncoding = 18446744071562067968; lastKnownFileType = sourcecode.c.h; path = StickyTitleView.h; sourceTree = "<group>"; };
+		8EABC31E05B9BC0D001DBE4D /* StickyTitleView.m */ = {isa = PBXFileReference; fileEncoding = 18446744071562067968; lastKnownFileType = sourcecode.c.objc; path = StickyTitleView.m; sourceTree = "<group>"; };
+		8EABC4C405B9DEC3001DBE4D /* StickyBackgroundView.m */ = {isa = PBXFileReference; fileEncoding = 18446744071562067968; lastKnownFileType = sourcecode.c.objc; path = StickyBackgroundView.m; sourceTree = "<group>"; };
+		8EABC4C505B9DEC3001DBE4D /* StickyBackgroundView.h */ = {isa = PBXFileReference; fileEncoding = 18446744071562067968; lastKnownFileType = sourcecode.c.h; path = StickyBackgroundView.h; sourceTree = "<group>"; };
 		8EB9F0FB066CA3330065D189 /* Japanese */ = {isa = PBXFileReference; lastKnownFileType = wrapper.nib; name = Japanese; path = Japanese.lproj/MainMenu.nib; sourceTree = "<group>"; };
 		8EB9F123066CA8EE0065D189 /* Japanese */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; name = Japanese; path = Japanese.lproj/Localizable.strings; sourceTree = "<group>"; };
 		8EB9F126066CA9E40065D189 /* Japanese */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Japanese; path = Japanese.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		8EB9F127066CAD320065D189 /* NSTextViewWithLinks.m */ = {isa = PBXFileReference; fileEncoding = "-2147483647"; lastKnownFileType = sourcecode.c.objc; path = NSTextViewWithLinks.m; sourceTree = "<group>"; };
-		8EB9F128066CAD320065D189 /* NSTextViewWithLinks.h */ = {isa = PBXFileReference; fileEncoding = "-2147483647"; lastKnownFileType = sourcecode.c.h; path = NSTextViewWithLinks.h; sourceTree = "<group>"; };
+		8EB9F127066CAD320065D189 /* NSTextViewWithLinks.m */ = {isa = PBXFileReference; fileEncoding = 18446744071562067968; lastKnownFileType = sourcecode.c.objc; path = NSTextViewWithLinks.m; sourceTree = "<group>"; };
+		8EB9F128066CAD320065D189 /* NSTextViewWithLinks.h */ = {isa = PBXFileReference; fileEncoding = 18446744071562067968; lastKnownFileType = sourcecode.c.h; path = NSTextViewWithLinks.h; sourceTree = "<group>"; };
 		8EC657F105B86505002EA89B /* metal_resize.tif */ = {isa = PBXFileReference; lastKnownFileType = image.tiff; path = metal_resize.tif; sourceTree = "<group>"; };
 		8EC6581705B8A7B5002EA89B /* back_button_pressed.tif */ = {isa = PBXFileReference; lastKnownFileType = image.tiff; path = back_button_pressed.tif; sourceTree = "<group>"; };
 		8EC6581805B8A7B5002EA89B /* back_button.tif */ = {isa = PBXFileReference; lastKnownFileType = image.tiff; path = back_button.tif; sourceTree = "<group>"; };
@@ -154,8 +128,8 @@
 		8EC6582005B8A886002EA89B /* go_button_pressed.tif */ = {isa = PBXFileReference; lastKnownFileType = image.tiff; path = go_button_pressed.tif; sourceTree = "<group>"; };
 		8EC6582305B8A9FB002EA89B /* sound_button.tif */ = {isa = PBXFileReference; lastKnownFileType = image.tiff; path = sound_button.tif; sourceTree = "<group>"; };
 		8EC6582405B8A9FB002EA89B /* sound_button_pressed.tif */ = {isa = PBXFileReference; lastKnownFileType = image.tiff; path = sound_button_pressed.tif; sourceTree = "<group>"; };
-		8ECEFBC605B963D500EFACE5 /* MetalButton.h */ = {isa = PBXFileReference; fileEncoding = "-2147483647"; lastKnownFileType = sourcecode.c.h; path = MetalButton.h; sourceTree = "<group>"; };
-		8ECEFBC705B963D500EFACE5 /* MetalButton.m */ = {isa = PBXFileReference; fileEncoding = "-2147483647"; lastKnownFileType = sourcecode.c.objc; path = MetalButton.m; sourceTree = "<group>"; };
+		8ECEFBC605B963D500EFACE5 /* MetalButton.h */ = {isa = PBXFileReference; fileEncoding = 18446744071562067968; lastKnownFileType = sourcecode.c.h; path = MetalButton.h; sourceTree = "<group>"; };
+		8ECEFBC705B963D500EFACE5 /* MetalButton.m */ = {isa = PBXFileReference; fileEncoding = 18446744071562067968; lastKnownFileType = sourcecode.c.objc; path = MetalButton.m; sourceTree = "<group>"; };
 		8ECEFBFC05B9692B00EFACE5 /* go_button_disabled.tif */ = {isa = PBXFileReference; lastKnownFileType = image.tiff; path = go_button_disabled.tif; sourceTree = "<group>"; };
 		8ECEFC0905B969E300EFACE5 /* back_button_disabled.tif */ = {isa = PBXFileReference; lastKnownFileType = image.tiff; path = back_button_disabled.tif; sourceTree = "<group>"; };
 		8EDE98C305C6BF5700FE61A3 /* English */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; name = English; path = English.lproj/Localizable.strings; sourceTree = "<group>"; };
@@ -364,31 +338,6 @@
 			);
 			buildRules = (
 			);
-			buildSettings = {
-				FRAMEWORK_SEARCH_PATHS = "";
-				GCC_C_LANGUAGE_STANDARD = c99;
-				GCC_ENABLE_TRIGRAPHS = NO;
-				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "EIJIRO mini_Prefix.pch";
-				GCC_WARN_ABOUT_MISSING_PROTOTYPES = NO;
-				GCC_WARN_FOUR_CHARACTER_CONSTANTS = NO;
-				GCC_WARN_UNKNOWN_PRAGMAS = NO;
-				HEADER_SEARCH_PATHS = "";
-				INFOPLIST_FILE = Info.plist;
-				INSTALL_PATH = "$(HOME)/Applications";
-				LIBRARY_SEARCH_PATHS = "";
-				OTHER_CFLAGS = "";
-				OTHER_LDFLAGS = "";
-				PRODUCT_NAME = "EIJIRO mini";
-				SECTORDER_FLAGS = "";
-				WARNING_CFLAGS = (
-					"-Wmost",
-					"-Wno-four-char-constants",
-					"-Wno-unknown-pragmas",
-				);
-				WRAPPER_EXTENSION = app;
-			};
 			dependencies = (
 			);
 			name = "EIJIRO mini";
@@ -402,16 +351,24 @@
 /* Begin PBXProject section */
 		29B97313FDCFA39411CA2CEA /* Project object */ = {
 			isa = PBXProject;
-			buildConfigurationList = 8E568A1708E208AA002DF0AF /* Build configuration list for PBXProject "EIJIRO mini" */;
-			buildSettings = {
+			attributes = {
+				LastUpgradeCheck = 0500;
+				TargetAttributes = {
+					8D1107260486CEB800E47090 = {
+						DevelopmentTeam = KB6WN2W7VV;
+					};
+				};
 			};
-			buildStyles = (
-				4A9504CCFFE6A4B311CA0CBA /* Development */,
-				4A9504CDFFE6A4B311CA0CBA /* Deployment */,
-			);
+			buildConfigurationList = 8E568A1708E208AA002DF0AF /* Build configuration list for PBXProject "EIJIRO mini" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
 			hasScannedForEncodings = 1;
+			knownRegions = (
+				en,
+			);
 			mainGroup = 29B97314FDCFA39411CA2CEA /* Mini EIJIRO */;
 			projectDirPath = "";
+			projectRoot = "";
 			targets = (
 				8D1107260486CEB800E47090 /* EIJIRO mini */,
 			);
@@ -511,6 +468,7 @@
 		8E568A1408E208AA002DF0AF /* Development */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
 				COPY_PHASE_STRIP = NO;
 				DEBUGGING_SYMBOLS = YES;
 				FRAMEWORK_SEARCH_PATHS = "";
@@ -529,7 +487,7 @@
 				INFOPLIST_FILE = Info.plist;
 				INSTALL_PATH = "$(HOME)/Applications";
 				LIBRARY_SEARCH_PATHS = "";
-				MACOSX_DEPLOYMENT_TARGET = 10.3;
+				MACOSX_DEPLOYMENT_TARGET = 10.8;
 				OPTIMIZATION_CFLAGS = "-O0";
 				OTHER_CFLAGS = "";
 				OTHER_LDFLAGS = "";
@@ -548,6 +506,7 @@
 		8E568A1508E208AA002DF0AF /* Deployment */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
 				COPY_PHASE_STRIP = YES;
 				FRAMEWORK_SEARCH_PATHS = "";
 				GCC_C_LANGUAGE_STANDARD = c99;
@@ -563,7 +522,7 @@
 				INFOPLIST_FILE = Info.plist;
 				INSTALL_PATH = "$(HOME)/Applications";
 				LIBRARY_SEARCH_PATHS = "";
-				MACOSX_DEPLOYMENT_TARGET = 10.4;
+				MACOSX_DEPLOYMENT_TARGET = 10.8;
 				OTHER_CFLAGS = "";
 				OTHER_LDFLAGS = "";
 				PRODUCT_NAME = "EIJIRO mini";
@@ -581,6 +540,7 @@
 		8E568A1608E208AA002DF0AF /* Default */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
 				FRAMEWORK_SEARCH_PATHS = "";
 				GCC_C_LANGUAGE_STANDARD = c99;
 				GCC_ENABLE_TRIGRAPHS = NO;
@@ -594,7 +554,7 @@
 				INFOPLIST_FILE = Info.plist;
 				INSTALL_PATH = "$(HOME)/Applications";
 				LIBRARY_SEARCH_PATHS = "";
-				MACOSX_DEPLOYMENT_TARGET = 10.3;
+				MACOSX_DEPLOYMENT_TARGET = 10.8;
 				OTHER_CFLAGS = "";
 				OTHER_LDFLAGS = "";
 				PRODUCT_NAME = "EIJIRO mini";
@@ -611,33 +571,21 @@
 		8E568A1808E208AA002DF0AF /* Development */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ARCHS = (
-					ppc,
-					i386,
-				);
-				SDKROOT = /Developer/SDKs/MacOSX10.4u.sdk;
+				SDKROOT = macosx;
 			};
 			name = Development;
 		};
 		8E568A1908E208AA002DF0AF /* Deployment */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ARCHS = (
-					ppc,
-					i386,
-				);
-				SDKROOT = /Developer/SDKs/MacOSX10.4u.sdk;
+				SDKROOT = macosx;
 			};
 			name = Deployment;
 		};
 		8E568A1A08E208AA002DF0AF /* Default */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ARCHS = (
-					ppc,
-					i386,
-				);
-				SDKROOT = /Developer/SDKs/MacOSX10.4u.sdk;
+				SDKROOT = macosx;
 			};
 			name = Default;
 		};

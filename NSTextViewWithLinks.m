@@ -35,10 +35,12 @@
 //	Make all NSTextView instances into instances of this class, even if we didn't create them.
 //	(We could instead selectively make some instances in nib files belong to this class,
 //	 but then it's hard to enter the initial text using Interface Builder.)
+/*
 + (void) load
 {
     [self poseAsClass: [self superclass]];
 }
+ */
 
 
 #pragma mark PRIVATE INSTANCE METHODS
