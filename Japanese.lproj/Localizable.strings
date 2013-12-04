@@ -1,0 +1,7 @@
+"EIJIRO_SEARCH" = "■%@";
+"Not found '%@'." = "'%@' は見つかりませんでした。";
+"\n\nGuesses:\n" = "\n\n修正候補：\n";
+"\n\nNo guess." = "\n\n修正候補はありません。";
+
+"VER80_EXAMPLE_PREFIX" = "■・";
+"EXAMPLE_FIRST_PREFIX" = " /【用例】";

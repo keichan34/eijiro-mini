@@ -1,0 +1,25 @@
+{
+    IBClasses = (
+        {CLASS = DraggableView; LANGUAGE = ObjC; SUPERCLASS = NSView; }, 
+        {CLASS = FirstResponder; LANGUAGE = ObjC; SUPERCLASS = NSObject; }, 
+        {CLASS = ResizeView; LANGUAGE = ObjC; SUPERCLASS = NSView; }, 
+        {CLASS = StickyBackgroundView; LANGUAGE = ObjC; SUPERCLASS = NSView; }, 
+        {
+            CLASS = StickyDocument; 
+            LANGUAGE = ObjC; 
+            OUTLETS = {
+                backgroundView = StickyBackgroundView; 
+                mainWindow = NSWindow; 
+                resizeView = NSView; 
+                scrollView = NSScrollView; 
+                stickyView = StickyView; 
+                titleView = StickyTitleView; 
+            }; 
+            SUPERCLASS = NSDocument; 
+        }, 
+        {CLASS = StickyTitleView; LANGUAGE = ObjC; SUPERCLASS = NSView; }, 
+        {CLASS = StickyView; LANGUAGE = ObjC; SUPERCLASS = NSTextView; }, 
+        {CLASS = StickyWindow; LANGUAGE = ObjC; SUPERCLASS = NSWindow; }
+    ); 
+    IBVersion = 1; 
+}
