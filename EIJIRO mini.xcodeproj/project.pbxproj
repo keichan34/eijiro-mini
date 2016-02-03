@@ -352,7 +352,7 @@
 		29B97313FDCFA39411CA2CEA /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0500;
+				LastUpgradeCheck = 0720;
 				TargetAttributes = {
 					8D1107260486CEB800E47090 = {
 						DevelopmentTeam = KB6WN2W7VV;
@@ -491,6 +491,7 @@
 				OPTIMIZATION_CFLAGS = "-O0";
 				OTHER_CFLAGS = "";
 				OTHER_LDFLAGS = "";
+				PRODUCT_BUNDLE_IDENTIFIER = com.eijiromini.EIJIROmini;
 				PRODUCT_NAME = "EIJIRO mini";
 				SECTORDER_FLAGS = "";
 				WARNING_CFLAGS = (
@@ -525,6 +526,7 @@
 				MACOSX_DEPLOYMENT_TARGET = 10.8;
 				OTHER_CFLAGS = "";
 				OTHER_LDFLAGS = "";
+				PRODUCT_BUNDLE_IDENTIFIER = com.eijiromini.EIJIROmini;
 				PRODUCT_NAME = "EIJIRO mini";
 				SECTORDER_FLAGS = "";
 				WARNING_CFLAGS = (
@@ -557,6 +559,7 @@
 				MACOSX_DEPLOYMENT_TARGET = 10.8;
 				OTHER_CFLAGS = "";
 				OTHER_LDFLAGS = "";
+				PRODUCT_BUNDLE_IDENTIFIER = com.eijiromini.EIJIROmini;
 				PRODUCT_NAME = "EIJIRO mini";
 				SECTORDER_FLAGS = "";
 				WARNING_CFLAGS = (
@@ -571,7 +574,10 @@
 		8E568A1808E208AA002DF0AF /* Development */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ENABLE_TESTABILITY = YES;
+				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = macosx;
+				VALID_ARCHS = x86_64;
 			};
 			name = Development;
 		};
@@ -579,6 +585,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				SDKROOT = macosx;
+				VALID_ARCHS = x86_64;
 			};
 			name = Deployment;
 		};
@@ -586,6 +593,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				SDKROOT = macosx;
+				VALID_ARCHS = x86_64;
 			};
 			name = Default;
 		};
