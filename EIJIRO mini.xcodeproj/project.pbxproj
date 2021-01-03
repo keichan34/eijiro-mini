@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 46;
+	objectVersion = 54;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -68,9 +68,13 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		089C165DFE840E0CC02AAC07 /* English */ = {isa = PBXFileReference; fileEncoding = 10; lastKnownFileType = text.plist.strings; name = English; path = English.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		234BD12925A1F534008DA8AE /* ja */ = {isa = PBXFileReference; lastKnownFileType = wrapper.nib; name = ja; path = ja.lproj/MainMenu.nib; sourceTree = "<group>"; };
+		234BD12A25A1F534008DA8AE /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		234BD12B25A1F534008DA8AE /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/Localizable.strings; sourceTree = "<group>"; };
+		234BD12E25A1F536008DA8AE /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		234BD12F25A1F538008DA8AE /* Base */ = {isa = PBXFileReference; lastKnownFileType = wrapper.nib; name = Base; path = Base.lproj/MainMenu.nib; sourceTree = "<group>"; };
+		234BD13125A1F59F008DA8AE /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		29B97316FDCFA39411CA2CEA /* main.m */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		29B97319FDCFA39411CA2CEA /* English */ = {isa = PBXFileReference; lastKnownFileType = wrapper.nib; name = English; path = English.lproj/MainMenu.nib; sourceTree = "<group>"; };
 		29B97324FDCFA39411CA2CEA /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = /System/Library/Frameworks/AppKit.framework; sourceTree = "<absolute>"; };
 		29B97325FDCFA39411CA2CEA /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = /System/Library/Frameworks/Foundation.framework; sourceTree = "<absolute>"; };
 		32CA4F630368D1EE00C91783 /* EIJIRO mini_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "EIJIRO mini_Prefix.pch"; sourceTree = "<group>"; };
@@ -116,9 +120,6 @@
 		8EABC31E05B9BC0D001DBE4D /* StickyTitleView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StickyTitleView.m; sourceTree = "<group>"; };
 		8EABC4C405B9DEC3001DBE4D /* StickyBackgroundView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StickyBackgroundView.m; sourceTree = "<group>"; };
 		8EABC4C505B9DEC3001DBE4D /* StickyBackgroundView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StickyBackgroundView.h; sourceTree = "<group>"; };
-		8EB9F0FB066CA3330065D189 /* Japanese */ = {isa = PBXFileReference; lastKnownFileType = wrapper.nib; name = Japanese; path = Japanese.lproj/MainMenu.nib; sourceTree = "<group>"; };
-		8EB9F123066CA8EE0065D189 /* Japanese */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; name = Japanese; path = Japanese.lproj/Localizable.strings; sourceTree = "<group>"; };
-		8EB9F126066CA9E40065D189 /* Japanese */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; name = Japanese; path = Japanese.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		8EB9F127066CAD320065D189 /* NSTextViewWithLinks.m */ = {isa = PBXFileReference; fileEncoding = 18446744071562067968; lastKnownFileType = sourcecode.c.objc; path = NSTextViewWithLinks.m; sourceTree = "<group>"; };
 		8EB9F128066CAD320065D189 /* NSTextViewWithLinks.h */ = {isa = PBXFileReference; fileEncoding = 18446744071562067968; lastKnownFileType = sourcecode.c.h; path = NSTextViewWithLinks.h; sourceTree = "<group>"; };
 		8EC657F105B86505002EA89B /* metal_resize.tif */ = {isa = PBXFileReference; lastKnownFileType = image.tiff; path = metal_resize.tif; sourceTree = "<group>"; };
@@ -132,7 +133,6 @@
 		8ECEFBC705B963D500EFACE5 /* MetalButton.m */ = {isa = PBXFileReference; fileEncoding = 18446744071562067968; lastKnownFileType = sourcecode.c.objc; path = MetalButton.m; sourceTree = "<group>"; };
 		8ECEFBFC05B9692B00EFACE5 /* go_button_disabled.tif */ = {isa = PBXFileReference; lastKnownFileType = image.tiff; path = go_button_disabled.tif; sourceTree = "<group>"; };
 		8ECEFC0905B969E300EFACE5 /* back_button_disabled.tif */ = {isa = PBXFileReference; lastKnownFileType = image.tiff; path = back_button_disabled.tif; sourceTree = "<group>"; };
-		8EDE98C305C6BF5700FE61A3 /* English */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; name = English; path = English.lproj/Localizable.strings; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -360,11 +360,13 @@
 				};
 			};
 			buildConfigurationList = 8E568A1708E208AA002DF0AF /* Build configuration list for PBXProject "EIJIRO mini" */;
-			compatibilityVersion = "Xcode 3.2";
-			developmentRegion = English;
+			compatibilityVersion = "Xcode 12.0";
+			developmentRegion = en;
 			hasScannedForEncodings = 1;
 			knownRegions = (
 				en,
+				ja,
+				Base,
 			);
 			mainGroup = 29B97314FDCFA39411CA2CEA /* Mini EIJIRO */;
 			projectDirPath = "";
@@ -438,8 +440,8 @@
 		089C165CFE840E0CC02AAC07 /* InfoPlist.strings */ = {
 			isa = PBXVariantGroup;
 			children = (
-				089C165DFE840E0CC02AAC07 /* English */,
-				8EB9F126066CA9E40065D189 /* Japanese */,
+				234BD12A25A1F534008DA8AE /* ja */,
+				234BD13125A1F59F008DA8AE /* en */,
 			);
 			name = InfoPlist.strings;
 			sourceTree = "<group>";
@@ -447,8 +449,8 @@
 		29B97318FDCFA39411CA2CEA /* MainMenu.nib */ = {
 			isa = PBXVariantGroup;
 			children = (
-				29B97319FDCFA39411CA2CEA /* English */,
-				8EB9F0FB066CA3330065D189 /* Japanese */,
+				234BD12925A1F534008DA8AE /* ja */,
+				234BD12F25A1F538008DA8AE /* Base */,
 			);
 			name = MainMenu.nib;
 			sourceTree = "<group>";
@@ -456,8 +458,8 @@
 		8EB9F121066CA8E70065D189 /* Localizable.strings */ = {
 			isa = PBXVariantGroup;
 			children = (
-				8EDE98C305C6BF5700FE61A3 /* English */,
-				8EB9F123066CA8EE0065D189 /* Japanese */,
+				234BD12B25A1F534008DA8AE /* ja */,
+				234BD12E25A1F536008DA8AE /* en */,
 			);
 			name = Localizable.strings;
 			sourceTree = "<group>";
@@ -487,13 +489,14 @@
 				INFOPLIST_FILE = Info.plist;
 				INSTALL_PATH = "$(HOME)/Applications";
 				LIBRARY_SEARCH_PATHS = "";
-				MACOSX_DEPLOYMENT_TARGET = 10.8;
+				MACOSX_DEPLOYMENT_TARGET = 10.14;
 				OPTIMIZATION_CFLAGS = "-O0";
 				OTHER_CFLAGS = "";
 				OTHER_LDFLAGS = "";
 				PRODUCT_BUNDLE_IDENTIFIER = com.eijiromini.EIJIROmini;
 				PRODUCT_NAME = "EIJIRO mini";
 				SECTORDER_FLAGS = "";
+				VALID_ARCHS = "x86_64 arm64";
 				WARNING_CFLAGS = (
 					"-Wmost",
 					"-Wno-four-char-constants",
@@ -523,12 +526,13 @@
 				INFOPLIST_FILE = Info.plist;
 				INSTALL_PATH = "$(HOME)/Applications";
 				LIBRARY_SEARCH_PATHS = "";
-				MACOSX_DEPLOYMENT_TARGET = 10.8;
+				MACOSX_DEPLOYMENT_TARGET = 10.14;
 				OTHER_CFLAGS = "";
 				OTHER_LDFLAGS = "";
 				PRODUCT_BUNDLE_IDENTIFIER = com.eijiromini.EIJIROmini;
 				PRODUCT_NAME = "EIJIRO mini";
 				SECTORDER_FLAGS = "";
+				VALID_ARCHS = "x86_64 arm64";
 				WARNING_CFLAGS = (
 					"-Wmost",
 					"-Wno-four-char-constants",
@@ -556,12 +560,13 @@
 				INFOPLIST_FILE = Info.plist;
 				INSTALL_PATH = "$(HOME)/Applications";
 				LIBRARY_SEARCH_PATHS = "";
-				MACOSX_DEPLOYMENT_TARGET = 10.8;
+				MACOSX_DEPLOYMENT_TARGET = 10.14;
 				OTHER_CFLAGS = "";
 				OTHER_LDFLAGS = "";
 				PRODUCT_BUNDLE_IDENTIFIER = com.eijiromini.EIJIROmini;
 				PRODUCT_NAME = "EIJIRO mini";
 				SECTORDER_FLAGS = "";
+				VALID_ARCHS = "x86_64 arm64";
 				WARNING_CFLAGS = (
 					"-Wmost",
 					"-Wno-four-char-constants",
@@ -575,25 +580,28 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ENABLE_TESTABILITY = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.14;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = macosx;
-				VALID_ARCHS = x86_64;
+				VALID_ARCHS = "x86_64 arm64";
 			};
 			name = Development;
 		};
 		8E568A1908E208AA002DF0AF /* Deployment */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				MACOSX_DEPLOYMENT_TARGET = 10.14;
 				SDKROOT = macosx;
-				VALID_ARCHS = x86_64;
+				VALID_ARCHS = "x86_64 arm64";
 			};
 			name = Deployment;
 		};
 		8E568A1A08E208AA002DF0AF /* Default */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				MACOSX_DEPLOYMENT_TARGET = 10.14;
 				SDKROOT = macosx;
-				VALID_ARCHS = x86_64;
+				VALID_ARCHS = "x86_64 arm64";
 			};
 			name = Default;
 		};

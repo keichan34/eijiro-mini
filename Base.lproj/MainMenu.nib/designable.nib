@@ -1,0 +1,793 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="17701" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES">
+    <dependencies>
+        <deployment version="1090" identifier="macosx"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="17701"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <customObject id="-2" userLabel="File's Owner" customClass="NSApplication">
+            <connections>
+                <outlet property="delegate" destination="204" id="206"/>
+            </connections>
+        </customObject>
+        <customObject id="-1" userLabel="First Responder" customClass="FirstResponder"/>
+        <customObject id="-3" userLabel="Application"/>
+        <menu title="MainMenu" systemMenu="main" id="29" userLabel="MainMenu">
+            <items>
+                <menuItem title="EIJIRO mini" id="56">
+                    <menu key="submenu" title="EIJIRO mini" systemMenu="apple" id="57">
+                        <items>
+                            <menuItem title="About EIJIRO mini" id="58">
+                                <modifierMask key="keyEquivalentModifierMask"/>
+                                <connections>
+                                    <action selector="orderFrontStandardAboutPanel:" target="-2" id="142"/>
+                                </connections>
+                            </menuItem>
+                            <menuItem isSeparatorItem="YES" id="196">
+                                <modifierMask key="keyEquivalentModifierMask" command="YES"/>
+                            </menuItem>
+                            <menuItem title="Preferences…" keyEquivalent="," id="129">
+                                <connections>
+                                    <action selector="showPreferences:" target="204" id="271"/>
+                                </connections>
+                            </menuItem>
+                            <menuItem isSeparatorItem="YES" id="143">
+                                <modifierMask key="keyEquivalentModifierMask" command="YES"/>
+                            </menuItem>
+                            <menuItem title="Services" id="131">
+                                <menu key="submenu" title="Services" systemMenu="services" id="130"/>
+                            </menuItem>
+                            <menuItem isSeparatorItem="YES" id="144">
+                                <modifierMask key="keyEquivalentModifierMask" command="YES"/>
+                            </menuItem>
+                            <menuItem title="Hide EIJIRO mini" keyEquivalent="h" id="134">
+                                <connections>
+                                    <action selector="hide:" target="-2" id="152"/>
+                                </connections>
+                            </menuItem>
+                            <menuItem title="Hide Others" keyEquivalent="h" id="145">
+                                <modifierMask key="keyEquivalentModifierMask" option="YES" command="YES"/>
+                                <connections>
+                                    <action selector="hideOtherApplications:" target="-2" id="146"/>
+                                </connections>
+                            </menuItem>
+                            <menuItem title="Show All" id="150">
+                                <connections>
+                                    <action selector="unhideAllApplications:" target="-2" id="153"/>
+                                </connections>
+                            </menuItem>
+                            <menuItem isSeparatorItem="YES" id="149">
+                                <modifierMask key="keyEquivalentModifierMask" command="YES"/>
+                            </menuItem>
+                            <menuItem title="Quit EIJIRO mini" keyEquivalent="q" id="136">
+                                <connections>
+                                    <action selector="terminate:" target="-2" id="139"/>
+                                </connections>
+                            </menuItem>
+                        </items>
+                    </menu>
+                </menuItem>
+                <menuItem title="File" id="83">
+                    <menu key="submenu" title="File" id="81">
+                        <items>
+                            <menuItem title="Make New Sticky" tag="1" keyEquivalent="n" id="82">
+                                <connections>
+                                    <action selector="makeNewSticky:" target="204" id="346"/>
+                                </connections>
+                            </menuItem>
+                            <menuItem isSeparatorItem="YES" id="79">
+                                <modifierMask key="keyEquivalentModifierMask" command="YES"/>
+                            </menuItem>
+                            <menuItem title="Close" tag="2" keyEquivalent="w" id="73">
+                                <connections>
+                                    <action selector="closeSticky:" target="204" id="371"/>
+                                </connections>
+                            </menuItem>
+                            <menuItem isSeparatorItem="YES" id="74">
+                                <modifierMask key="keyEquivalentModifierMask" command="YES"/>
+                            </menuItem>
+                            <menuItem title="Page Setup…" keyEquivalent="P" id="77"/>
+                            <menuItem title="Print…" keyEquivalent="p" id="78"/>
+                        </items>
+                    </menu>
+                </menuItem>
+                <menuItem title="Edit" id="163">
+                    <menu key="submenu" title="Edit" id="169">
+                        <items>
+                            <menuItem title="Undo" keyEquivalent="z" id="158">
+                                <connections>
+                                    <action selector="undo:" target="-1" id="180"/>
+                                </connections>
+                            </menuItem>
+                            <menuItem title="Redo" keyEquivalent="Z" id="173">
+                                <connections>
+                                    <action selector="redo:" target="-1" id="178"/>
+                                </connections>
+                            </menuItem>
+                            <menuItem isSeparatorItem="YES" id="156">
+                                <modifierMask key="keyEquivalentModifierMask" command="YES"/>
+                            </menuItem>
+                            <menuItem title="Cut" keyEquivalent="x" id="160">
+                                <connections>
+                                    <action selector="cut:" target="-1" id="175"/>
+                                </connections>
+                            </menuItem>
+                            <menuItem title="Copy" keyEquivalent="c" id="157">
+                                <connections>
+                                    <action selector="copy:" target="-1" id="181"/>
+                                </connections>
+                            </menuItem>
+                            <menuItem title="Paste" keyEquivalent="v" id="171">
+                                <connections>
+                                    <action selector="paste:" target="-1" id="176"/>
+                                </connections>
+                            </menuItem>
+                            <menuItem title="Delete" id="164">
+                                <connections>
+                                    <action selector="delete:" target="-1" id="195"/>
+                                </connections>
+                            </menuItem>
+                            <menuItem title="Select All" keyEquivalent="a" id="172">
+                                <connections>
+                                    <action selector="selectAll:" target="-1" id="179"/>
+                                </connections>
+                            </menuItem>
+                            <menuItem isSeparatorItem="YES" id="174">
+                                <modifierMask key="keyEquivalentModifierMask" command="YES"/>
+                            </menuItem>
+                            <menuItem title="Find" id="168">
+                                <menu key="submenu" title="Find" id="159">
+                                    <items>
+                                        <menuItem title="Find…" tag="1" keyEquivalent="f" id="154">
+                                            <connections>
+                                                <action selector="performFindPanelAction:" target="-1" id="199"/>
+                                            </connections>
+                                        </menuItem>
+                                        <menuItem title="Find Next" tag="2" keyEquivalent="g" id="167">
+                                            <connections>
+                                                <action selector="performFindPanelAction:" target="-1" id="200"/>
+                                            </connections>
+                                        </menuItem>
+                                        <menuItem title="Find Previous" tag="3" keyEquivalent="G" id="162">
+                                            <connections>
+                                                <action selector="performFindPanelAction:" target="-1" id="201"/>
+                                            </connections>
+                                        </menuItem>
+                                        <menuItem title="Use Selection for Find" tag="7" keyEquivalent="e" id="161">
+                                            <connections>
+                                                <action selector="performFindPanelAction:" target="-1" id="202"/>
+                                            </connections>
+                                        </menuItem>
+                                        <menuItem title="Jump to Selection" keyEquivalent="j" id="155">
+                                            <connections>
+                                                <action selector="centerSelectionInVisibleArea:" target="-1" id="203"/>
+                                            </connections>
+                                        </menuItem>
+                                    </items>
+                                </menu>
+                            </menuItem>
+                            <menuItem title="Spelling" id="184">
+                                <menu key="submenu" title="Spelling" id="185">
+                                    <items>
+                                        <menuItem title="Spelling…" keyEquivalent=":" id="187">
+                                            <connections>
+                                                <action selector="showGuessPanel:" target="-1" id="188"/>
+                                            </connections>
+                                        </menuItem>
+                                        <menuItem title="Check Spelling" keyEquivalent=";" id="189">
+                                            <connections>
+                                                <action selector="checkSpelling:" target="-1" id="190"/>
+                                            </connections>
+                                        </menuItem>
+                                        <menuItem title="Check Spelling as You Type" id="191">
+                                            <connections>
+                                                <action selector="toggleContinuousSpellChecking:" target="-1" id="192"/>
+                                            </connections>
+                                        </menuItem>
+                                    </items>
+                                </menu>
+                            </menuItem>
+                            <menuItem title="Speech" id="317">
+                                <menu key="submenu" title="Speech" id="316">
+                                    <items>
+                                        <menuItem title="Start Speaking" keyEquivalent="r" id="318">
+                                            <connections>
+                                                <action selector="pronounce:" target="204" id="320"/>
+                                            </connections>
+                                        </menuItem>
+                                        <menuItem title="Stop Speaking" keyEquivalent="t" id="319"/>
+                                    </items>
+                                </menu>
+                            </menuItem>
+                        </items>
+                    </menu>
+                </menuItem>
+                <menuItem title="View" id="324">
+                    <menu key="submenu" title="View" id="325">
+                        <items>
+                            <menuItem title="Show" id="326"/>
+                            <menuItem title="Move" id="382">
+                                <connections>
+                                    <action selector="hideMoveButton:" target="204" id="384"/>
+                                </connections>
+                            </menuItem>
+                            <menuItem title="Pronunciation" id="340">
+                                <connections>
+                                    <action selector="hidePronounceButton:" target="204" id="342"/>
+                                </connections>
+                            </menuItem>
+                        </items>
+                    </menu>
+                </menuItem>
+                <menuItem title="Move" id="329">
+                    <menu key="submenu" title="Move" id="327">
+                        <items>
+                            <menuItem title="Go Back" tag="30" keyEquivalent="[" id="328">
+                                <connections>
+                                    <action selector="goPrevious:" target="204" id="389"/>
+                                </connections>
+                            </menuItem>
+                            <menuItem title="Go Forward" tag="31" keyEquivalent="]" id="385">
+                                <connections>
+                                    <action selector="goAfter:" target="204" id="390"/>
+                                </connections>
+                            </menuItem>
+                            <menuItem isSeparatorItem="YES" id="391">
+                                <modifierMask key="keyEquivalentModifierMask" command="YES"/>
+                            </menuItem>
+                            <menuItem title="Search First Guess" tag="32" id="392">
+                                <string key="keyEquivalent" base64-UTF8="YES">
+DQ
+</string>
+                                <connections>
+                                    <action selector="searchFirstGuess:" target="204" id="394"/>
+                                </connections>
+                            </menuItem>
+                            <menuItem title="Search Second Guess" tag="33" id="393">
+                                <string key="keyEquivalent" base64-UTF8="YES">
+DQ
+</string>
+                                <modifierMask key="keyEquivalentModifierMask" option="YES" command="YES"/>
+                                <connections>
+                                    <action selector="searchSecondGuess:" target="204" id="395"/>
+                                </connections>
+                            </menuItem>
+                        </items>
+                    </menu>
+                </menuItem>
+                <menuItem title="Window" id="19">
+                    <menu key="submenu" title="Window" systemMenu="window" id="24">
+                        <items>
+                            <menuItem title="Minimize" keyEquivalent="m" id="23">
+                                <connections>
+                                    <action selector="performMiniaturize:" target="-1" id="37"/>
+                                </connections>
+                            </menuItem>
+                            <menuItem title="Zoom" id="197">
+                                <connections>
+                                    <action selector="performZoom:" target="-1" id="198"/>
+                                </connections>
+                            </menuItem>
+                            <menuItem isSeparatorItem="YES" id="430"/>
+                            <menuItem title="Reset Position" id="429">
+                                <modifierMask key="keyEquivalentModifierMask"/>
+                                <connections>
+                                    <action selector="resetPosition:" target="204" id="431"/>
+                                </connections>
+                            </menuItem>
+                            <menuItem isSeparatorItem="YES" id="92">
+                                <modifierMask key="keyEquivalentModifierMask" command="YES"/>
+                            </menuItem>
+                            <menuItem title="Bring All to Front" id="5">
+                                <connections>
+                                    <action selector="arrangeInFront:" target="-1" id="39"/>
+                                </connections>
+                            </menuItem>
+                        </items>
+                    </menu>
+                </menuItem>
+                <menuItem title="Help" id="103">
+                    <menu key="submenu" title="Help" id="106">
+                        <items>
+                            <menuItem title="EIJIRO mini Help" keyEquivalent="?" id="111">
+                                <connections>
+                                    <action selector="showHelp:" target="-1" id="122"/>
+                                </connections>
+                            </menuItem>
+                        </items>
+                    </menu>
+                </menuItem>
+            </items>
+            <point key="canvasLocation" x="-27" y="127"/>
+        </menu>
+        <customObject id="204" userLabel="ApplicationManager" customClass="ApplicationManager">
+            <connections>
+                <outlet property="backButton" destination="314" id="322"/>
+                <outlet property="backgroundView" destination="237" id="240"/>
+                <outlet property="eijiroPathField" destination="255" id="308"/>
+                <outlet property="goButton" destination="313" id="323"/>
+                <outlet property="mainWindow" destination="216" id="217"/>
+                <outlet property="moveButtonMenuItem" destination="382" id="383"/>
+                <outlet property="preferencesWindow" destination="243" id="272"/>
+                <outlet property="pronounceButton" destination="311" id="312"/>
+                <outlet property="pronounceButtonMenuItem" destination="340" id="341"/>
+                <outlet property="reijiroPathField" destination="258" id="366"/>
+                <outlet property="resizeView" destination="227" id="236"/>
+                <outlet property="resultView" destination="222" id="321"/>
+                <outlet property="ryakugoroPathField" destination="256" id="365"/>
+                <outlet property="scrollView" destination="221" id="235"/>
+                <outlet property="searchWordField" destination="219" id="220"/>
+                <outlet property="waeijiroPathField" destination="257" id="364"/>
+            </connections>
+        </customObject>
+        <window title="Panel" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" releasedWhenClosed="NO" visibleAtLaunch="NO" animationBehavior="default" id="216" userLabel="Main Panel" customClass="MEPanel">
+            <windowStyleMask key="styleMask" titled="YES" closable="YES" nonactivatingPanel="YES"/>
+            <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
+            <rect key="contentRect" x="186" y="422" width="228" height="143"/>
+            <rect key="screenRect" x="0.0" y="0.0" width="1680" height="1025"/>
+            <view key="contentView" id="215">
+                <rect key="frame" x="0.0" y="0.0" width="228" height="143"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <customView fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="237" customClass="BackgroundView">
+                        <rect key="frame" x="0.0" y="115" width="228" height="28"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                        <subviews>
+                            <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="314" customClass="MetalButton">
+                                <rect key="frame" x="9" y="4" width="20" height="19"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <buttonCell key="cell" type="square" bezelStyle="shadowlessSquare" image="back_button_disabled" imagePosition="only" alignment="center" alternateImage="back_button_pressed" inset="2" id="400">
+                                    <behavior key="behavior" lightByContents="YES"/>
+                                    <font key="font" metaFont="system"/>
+                                </buttonCell>
+                                <connections>
+                                    <action selector="goPrevious:" target="204" id="387"/>
+                                </connections>
+                            </button>
+                            <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="313" customClass="MetalButton">
+                                <rect key="frame" x="29" y="4" width="19" height="19"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <buttonCell key="cell" type="square" bezelStyle="shadowlessSquare" image="go_button_disabled" imagePosition="only" alignment="center" alternateImage="go_button_pressed" inset="2" id="399">
+                                    <behavior key="behavior" lightByContents="YES"/>
+                                    <font key="font" metaFont="system"/>
+                                </buttonCell>
+                                <connections>
+                                    <action selector="goAfter:" target="204" id="388"/>
+                                </connections>
+                            </button>
+                            <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="311" customClass="MetalButton">
+                                <rect key="frame" x="59" y="4" width="19" height="19"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <buttonCell key="cell" type="square" bezelStyle="shadowlessSquare" image="sound_button_disabled" imagePosition="only" alignment="center" alternateImage="sound_button_pressed" inset="2" id="398">
+                                    <behavior key="behavior" lightByContents="YES"/>
+                                    <font key="font" metaFont="system"/>
+                                </buttonCell>
+                                <connections>
+                                    <action selector="pronounce:" target="204" id="315"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                    </customView>
+                    <searchField verticalHuggingPriority="750" fixedFrame="YES" textCompletion="NO" translatesAutoresizingMaskIntoConstraints="NO" id="219" customClass="MESearchField">
+                        <rect key="frame" x="86" y="118" width="133" height="22"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                        <searchFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" borderStyle="bezel" alignment="left" bezelStyle="round" id="397">
+                            <font key="font" metaFont="message" size="12"/>
+                            <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                            <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                        </searchFieldCell>
+                        <connections>
+                            <outlet property="delegate" destination="204" id="234"/>
+                        </connections>
+                    </searchField>
+                    <scrollView fixedFrame="YES" borderType="none" horizontalLineScroll="10" horizontalPageScroll="10" verticalLineScroll="10" verticalPageScroll="10" hasHorizontalScroller="NO" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="221">
+                        <rect key="frame" x="0.0" y="0.0" width="228" height="115"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <clipView key="contentView" id="Z5f-0G-zcq">
+                            <rect key="frame" x="0.0" y="0.0" width="228" height="115"/>
+                            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                            <subviews>
+                                <textView editable="NO" importsGraphics="NO" richText="NO" verticallyResizable="YES" usesFontPanel="YES" findStyle="panel" continuousSpellChecking="YES" usesRuler="YES" spellingCorrection="YES" smartInsertDelete="YES" id="222" customClass="ResultView">
+                                    <rect key="frame" x="0.0" y="0.0" width="228" height="115"/>
+                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                    <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                    <size key="minSize" width="228" height="115"/>
+                                    <size key="maxSize" width="230" height="10000000"/>
+                                    <color key="insertionPointColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                    <connections>
+                                        <outlet property="delegate" destination="204" id="370"/>
+                                    </connections>
+                                </textView>
+                            </subviews>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        </clipView>
+                        <scroller key="horizontalScroller" hidden="YES" wantsLayer="YES" verticalHuggingPriority="750" doubleValue="1" controlSize="small" horizontal="YES" id="427">
+                            <rect key="frame" x="-100" y="-100" width="87" height="18"/>
+                            <autoresizingMask key="autoresizingMask"/>
+                        </scroller>
+                        <scroller key="verticalScroller" wantsLayer="YES" verticalHuggingPriority="750" doubleValue="1" controlSize="small" horizontal="NO" id="428">
+                            <rect key="frame" x="214" y="0.0" width="14" height="115"/>
+                            <autoresizingMask key="autoresizingMask"/>
+                        </scroller>
+                    </scrollView>
+                    <customView fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="227" customClass="ResizeView">
+                        <rect key="frame" x="217" y="0.0" width="11" height="11"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxY="YES"/>
+                    </customView>
+                </subviews>
+            </view>
+            <connections>
+                <outlet property="delegate" destination="204" id="218"/>
+            </connections>
+            <point key="canvasLocation" x="-27" y="-42"/>
+        </window>
+        <window title="EIJIRO mini Preferences" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" releasedWhenClosed="NO" visibleAtLaunch="NO" animationBehavior="default" id="243" userLabel="Pref. Window">
+            <windowStyleMask key="styleMask" titled="YES" closable="YES"/>
+            <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
+            <rect key="contentRect" x="93" y="226" width="635" height="211"/>
+            <rect key="screenRect" x="0.0" y="0.0" width="1680" height="1025"/>
+            <view key="contentView" id="242">
+                <rect key="frame" x="0.0" y="0.0" width="635" height="211"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <tabView fixedFrame="YES" allowsTruncatedLabels="NO" translatesAutoresizingMaskIntoConstraints="NO" id="247">
+                        <rect key="frame" x="13" y="10" width="609" height="195"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <font key="font" metaFont="system"/>
+                        <tabViewItems>
+                            <tabViewItem label="Dictionary Paths" identifier="1" id="248">
+                                <view key="view" id="244">
+                                    <rect key="frame" x="10" y="33" width="589" height="149"/>
+                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                    <subviews>
+                                        <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" fixedFrame="YES" preferredMaxLayoutWidth="85" translatesAutoresizingMaskIntoConstraints="NO" id="253">
+                                            <rect key="frame" x="17" y="82" width="89" height="17"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <textFieldCell key="cell" sendsActionOnEndEditing="YES" alignment="right" title="RYAKUGORO:" id="405">
+                                                <font key="font" metaFont="system"/>
+                                                <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                                                <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                            </textFieldCell>
+                                        </textField>
+                                        <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" fixedFrame="YES" preferredMaxLayoutWidth="85" translatesAutoresizingMaskIntoConstraints="NO" id="254">
+                                            <rect key="frame" x="17" y="112" width="89" height="17"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <textFieldCell key="cell" sendsActionOnEndEditing="YES" alignment="right" title="EIJIRO:" id="406">
+                                                <font key="font" metaFont="system"/>
+                                                <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                                                <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                            </textFieldCell>
+                                        </textField>
+                                        <textField verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="255">
+                                            <rect key="frame" x="111" y="110" width="353" height="22"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" alignment="left" drawsBackground="YES" id="407">
+                                                <font key="font" metaFont="system"/>
+                                                <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                                <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                            </textFieldCell>
+                                            <connections>
+                                                <binding destination="280" name="value" keyPath="values.eijiroPath" id="295">
+                                                    <dictionary key="options">
+                                                        <integer key="NSAllowsEditingMultipleValuesSelection" value="0"/>
+                                                        <integer key="NSConditionallySetsEditable" value="0"/>
+                                                        <integer key="NSContinuouslyUpdatesValue" value="1"/>
+                                                        <string key="NSNotApplicablePlaceholder">Not Specified</string>
+                                                        <string key="NSNullPlaceholder">Not Specified</string>
+                                                    </dictionary>
+                                                </binding>
+                                            </connections>
+                                        </textField>
+                                        <textField verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="256">
+                                            <rect key="frame" x="111" y="80" width="353" height="22"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" alignment="left" drawsBackground="YES" id="408">
+                                                <font key="font" metaFont="system"/>
+                                                <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                                <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                            </textFieldCell>
+                                            <connections>
+                                                <binding destination="280" name="value" keyPath="values.ryakugoroPath" id="303">
+                                                    <dictionary key="options">
+                                                        <integer key="NSAllowsEditingMultipleValuesSelection" value="0"/>
+                                                        <integer key="NSConditionallySetsEditable" value="0"/>
+                                                        <string key="NSNotApplicablePlaceholder">Not Specified</string>
+                                                        <string key="NSNullPlaceholder">Not Specified</string>
+                                                    </dictionary>
+                                                </binding>
+                                            </connections>
+                                        </textField>
+                                        <textField verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="257">
+                                            <rect key="frame" x="111" y="50" width="353" height="22"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" alignment="left" drawsBackground="YES" id="409">
+                                                <font key="font" metaFont="system"/>
+                                                <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                                <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                            </textFieldCell>
+                                            <connections>
+                                                <binding destination="280" name="value" keyPath="values.waeijiroPath" id="301">
+                                                    <dictionary key="options">
+                                                        <integer key="NSAllowsEditingMultipleValuesSelection" value="0"/>
+                                                        <integer key="NSConditionallySetsEditable" value="0"/>
+                                                        <string key="NSNotApplicablePlaceholder">Not Specified</string>
+                                                        <string key="NSNullPlaceholder">Not Specified</string>
+                                                    </dictionary>
+                                                </binding>
+                                            </connections>
+                                        </textField>
+                                        <textField verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="258">
+                                            <rect key="frame" x="111" y="20" width="353" height="22"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" alignment="left" drawsBackground="YES" id="410">
+                                                <font key="font" metaFont="system"/>
+                                                <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                                <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                            </textFieldCell>
+                                            <connections>
+                                                <binding destination="280" name="value" keyPath="values.reijiroPath" id="307">
+                                                    <dictionary key="options">
+                                                        <integer key="NSAllowsEditingMultipleValuesSelection" value="0"/>
+                                                        <integer key="NSConditionallySetsEditable" value="0"/>
+                                                        <string key="NSNotApplicablePlaceholder">Not Specified</string>
+                                                        <string key="NSNullPlaceholder">Not Specified</string>
+                                                    </dictionary>
+                                                </binding>
+                                            </connections>
+                                        </textField>
+                                        <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" fixedFrame="YES" preferredMaxLayoutWidth="85" translatesAutoresizingMaskIntoConstraints="NO" id="259">
+                                            <rect key="frame" x="17" y="22" width="89" height="17"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <textFieldCell key="cell" sendsActionOnEndEditing="YES" alignment="right" title="REIJIRO:" id="411">
+                                                <font key="font" metaFont="system"/>
+                                                <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                                                <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                            </textFieldCell>
+                                        </textField>
+                                        <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" fixedFrame="YES" preferredMaxLayoutWidth="85" translatesAutoresizingMaskIntoConstraints="NO" id="260">
+                                            <rect key="frame" x="17" y="52" width="89" height="17"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <textFieldCell key="cell" sendsActionOnEndEditing="YES" alignment="right" title="WAEIJIRO:" id="412">
+                                                <font key="font" metaFont="system"/>
+                                                <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                                                <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                            </textFieldCell>
+                                        </textField>
+                                        <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="261">
+                                            <rect key="frame" x="466" y="102" width="115" height="32"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <buttonCell key="cell" type="push" title="Reference..." bezelStyle="rounded" alignment="center" borderStyle="border" inset="2" id="413">
+                                                <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                                <font key="font" metaFont="system"/>
+                                            </buttonCell>
+                                            <connections>
+                                                <action selector="referEIJIROPath:" target="204" id="285"/>
+                                            </connections>
+                                        </button>
+                                        <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="262">
+                                            <rect key="frame" x="466" y="72" width="115" height="32"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <buttonCell key="cell" type="push" title="Reference..." bezelStyle="rounded" alignment="center" borderStyle="border" inset="2" id="414">
+                                                <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                                <font key="font" metaFont="system"/>
+                                            </buttonCell>
+                                            <connections>
+                                                <action selector="referRYAKUGOROPath:" target="204" id="367"/>
+                                            </connections>
+                                        </button>
+                                        <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="263">
+                                            <rect key="frame" x="466" y="12" width="115" height="32"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <buttonCell key="cell" type="push" title="Reference..." bezelStyle="rounded" alignment="center" borderStyle="border" inset="2" id="415">
+                                                <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                                <font key="font" metaFont="system"/>
+                                            </buttonCell>
+                                            <connections>
+                                                <action selector="referREIJIROPath:" target="204" id="369"/>
+                                            </connections>
+                                        </button>
+                                        <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="264">
+                                            <rect key="frame" x="466" y="42" width="115" height="32"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <buttonCell key="cell" type="push" title="Reference..." bezelStyle="rounded" alignment="center" borderStyle="border" inset="2" id="416">
+                                                <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                                <font key="font" metaFont="system"/>
+                                            </buttonCell>
+                                            <connections>
+                                                <action selector="referWAEIJIROPath:" target="204" id="368"/>
+                                            </connections>
+                                        </button>
+                                    </subviews>
+                                </view>
+                            </tabViewItem>
+                            <tabViewItem label="Display Fonts" identifier="2" id="245">
+                                <view key="view" id="246">
+                                    <rect key="frame" x="10" y="33" width="589" height="149"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" preferredMaxLayoutWidth="110" translatesAutoresizingMaskIntoConstraints="NO" id="270">
+                                            <rect key="frame" x="17" y="112" width="114" height="17"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <textFieldCell key="cell" sendsActionOnEndEditing="YES" alignment="left" title="Result View Font:" id="401">
+                                                <font key="font" metaFont="system"/>
+                                                <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                                                <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                            </textFieldCell>
+                                        </textField>
+                                        <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" preferredMaxLayoutWidth="110" translatesAutoresizingMaskIntoConstraints="NO" id="345">
+                                            <rect key="frame" x="17" y="77" width="114" height="17"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <textFieldCell key="cell" sendsActionOnEndEditing="YES" alignment="right" title="Sticky Font:" id="402">
+                                                <font key="font" metaFont="system"/>
+                                                <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                                                <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                            </textFieldCell>
+                                        </textField>
+                                        <button translatesAutoresizingMaskIntoConstraints="NO" id="374">
+                                            <rect key="frame" x="139" y="108" width="290" height="25"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <buttonCell key="cell" type="square" title="Button" bezelStyle="shadowlessSquare" alignment="center" borderStyle="border" inset="2" id="403">
+                                                <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                                <font key="font" metaFont="smallSystem"/>
+                                            </buttonCell>
+                                            <connections>
+                                                <action selector="setResultFont:" target="204" id="377"/>
+                                                <binding destination="280" name="title" keyPath="values.fontDescription" id="379"/>
+                                            </connections>
+                                        </button>
+                                        <button translatesAutoresizingMaskIntoConstraints="NO" id="375">
+                                            <rect key="frame" x="139" y="73" width="290" height="25"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <buttonCell key="cell" type="square" title="Button" bezelStyle="shadowlessSquare" alignment="center" borderStyle="border" inset="2" id="404">
+                                                <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                                <font key="font" metaFont="smallSystem"/>
+                                            </buttonCell>
+                                            <connections>
+                                                <action selector="setStickyFont:" target="204" id="381"/>
+                                                <binding destination="280" name="title" keyPath="values.stickyFontDescription" id="380"/>
+                                            </connections>
+                                        </button>
+                                    </subviews>
+                                </view>
+                            </tabViewItem>
+                            <tabViewItem label="Sticky" identifier="" id="350">
+                                <view key="view" id="351">
+                                    <rect key="frame" x="10" y="33" width="589" height="149"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <slider verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="352">
+                                            <rect key="frame" x="106" y="77" width="275" height="25"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <sliderCell key="cell" continuous="YES" alignment="left" maxValue="1" doubleValue="1" tickMarkPosition="below" numberOfTickMarks="3" sliderType="linear" id="421">
+                                                <font key="font" size="12" name="Helvetica"/>
+                                            </sliderCell>
+                                            <connections>
+                                                <action selector="transparencyChanged:" target="204" id="360"/>
+                                                <binding destination="280" name="value" keyPath="values.stickyTransparency" id="355"/>
+                                            </connections>
+                                        </slider>
+                                        <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" preferredMaxLayoutWidth="82" translatesAutoresizingMaskIntoConstraints="NO" id="353">
+                                            <rect key="frame" x="17" y="88" width="86" height="17"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <textFieldCell key="cell" sendsActionOnEndEditing="YES" alignment="left" title="Opaqueness:" id="422">
+                                                <font key="font" metaFont="system"/>
+                                                <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                                                <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                            </textFieldCell>
+                                        </textField>
+                                        <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" preferredMaxLayoutWidth="14" translatesAutoresizingMaskIntoConstraints="NO" id="356">
+                                            <rect key="frame" x="111" y="61" width="18" height="13"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <textFieldCell key="cell" sendsActionOnEndEditing="YES" alignment="left" title="0%" id="423">
+                                                <font key="font" metaFont="label"/>
+                                                <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                                                <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                            </textFieldCell>
+                                        </textField>
+                                        <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" preferredMaxLayoutWidth="26" translatesAutoresizingMaskIntoConstraints="NO" id="357">
+                                            <rect key="frame" x="357" y="61" width="30" height="13"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <textFieldCell key="cell" sendsActionOnEndEditing="YES" alignment="left" title="100%" id="424">
+                                                <font key="font" metaFont="label"/>
+                                                <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                                                <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                            </textFieldCell>
+                                        </textField>
+                                        <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" preferredMaxLayoutWidth="20" translatesAutoresizingMaskIntoConstraints="NO" id="361">
+                                            <rect key="frame" x="234" y="61" width="24" height="13"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <textFieldCell key="cell" sendsActionOnEndEditing="YES" alignment="left" title="50%" id="425">
+                                                <font key="font" metaFont="label"/>
+                                                <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                                                <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                            </textFieldCell>
+                                        </textField>
+                                        <button translatesAutoresizingMaskIntoConstraints="NO" id="362">
+                                            <rect key="frame" x="18" y="113" width="176" height="18"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <buttonCell key="cell" type="check" title="Shade sticky on creation" bezelStyle="regularSquare" imagePosition="left" alignment="left" inset="2" id="426">
+                                                <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                                <font key="font" metaFont="system"/>
+                                            </buttonCell>
+                                            <connections>
+                                                <binding destination="280" name="value" keyPath="values.shadeStickyOnCreation" id="363"/>
+                                            </connections>
+                                        </button>
+                                    </subviews>
+                                </view>
+                            </tabViewItem>
+                            <tabViewItem label="Miscellaneous" identifier="" id="251">
+                                <view key="view" id="252">
+                                    <rect key="frame" x="10" y="33" width="589" height="149"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <button translatesAutoresizingMaskIntoConstraints="NO" id="265">
+                                            <rect key="frame" x="18" y="113" width="210" height="18"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <buttonCell key="cell" type="check" title="Remove rubies (parts of { ... })" bezelStyle="regularSquare" imagePosition="left" alignment="left" inset="2" id="417">
+                                                <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                                <font key="font" metaFont="system"/>
+                                            </buttonCell>
+                                            <connections>
+                                                <binding destination="280" name="value" keyPath="values.removeRubies" id="292"/>
+                                            </connections>
+                                        </button>
+                                        <button translatesAutoresizingMaskIntoConstraints="NO" id="266">
+                                            <rect key="frame" x="37" y="69" width="237" height="18"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <buttonCell key="cell" type="check" title="Clear search word on deactivation" bezelStyle="regularSquare" imagePosition="left" alignment="left" inset="2" id="418">
+                                                <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                                <font key="font" metaFont="system"/>
+                                            </buttonCell>
+                                            <connections>
+                                                <binding destination="280" name="enabled" keyPath="values.hideResultsOnDeactivation" id="339"/>
+                                                <binding destination="280" name="value" keyPath="values.clearSearchWordOnDeactivation" id="293"/>
+                                            </connections>
+                                        </button>
+                                        <button translatesAutoresizingMaskIntoConstraints="NO" id="267">
+                                            <rect key="frame" x="18" y="91" width="237" height="18"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <buttonCell key="cell" type="check" title="Hide results on deactivation" bezelStyle="regularSquare" imagePosition="left" alignment="left" inset="2" id="419">
+                                                <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                                <font key="font" metaFont="system"/>
+                                            </buttonCell>
+                                            <connections>
+                                                <binding destination="280" name="value" keyPath="values.hideResultsOnDeactivation" id="294"/>
+                                            </connections>
+                                        </button>
+                                        <button translatesAutoresizingMaskIntoConstraints="NO" id="372">
+                                            <rect key="frame" x="18" y="47" width="210" height="18"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <buttonCell key="cell" type="check" title="Always on top" bezelStyle="regularSquare" imagePosition="left" alignment="left" inset="2" id="420">
+                                                <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                                <font key="font" metaFont="system"/>
+                                            </buttonCell>
+                                            <connections>
+                                                <binding destination="280" name="value" keyPath="values.alwaysOnTop" id="373"/>
+                                            </connections>
+                                        </button>
+                                    </subviews>
+                                </view>
+                            </tabViewItem>
+                        </tabViewItems>
+                    </tabView>
+                </subviews>
+            </view>
+            <connections>
+                <outlet property="delegate" destination="-2" id="347"/>
+            </connections>
+            <point key="canvasLocation" x="-54" y="-337"/>
+        </window>
+        <userDefaultsController representsSharedInstance="YES" id="280" userLabel="Shared Defaults"/>
+    </objects>
+    <resources>
+        <image name="back_button_disabled" width="20" height="19"/>
+        <image name="back_button_pressed" width="20" height="19"/>
+        <image name="go_button_disabled" width="19" height="19"/>
+        <image name="go_button_pressed" width="19" height="19"/>
+        <image name="sound_button_disabled" width="19" height="19"/>
+        <image name="sound_button_pressed" width="19" height="19"/>
+    </resources>
+</document>
