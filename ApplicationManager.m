@@ -899,21 +899,25 @@ static ApplicationManager *_instance;
 		[speechManager currentPos] + speechStartPos,
 		[speechManager currentLength]);
 	
-	[speakingView scrollRangeToVisible:currentRange];
-	[speakingView setSelectedRange:currentRange];
-	[speakingView display];
+    dispatch_sync(dispatch_get_main_queue(), ^{
+        [speakingView scrollRangeToVisible:currentRange];
+        [speakingView setSelectedRange:currentRange];
+        [speakingView display];
+    });
 }
 
 - (void)speakingDone {
-	[pronounceButton setImage:[NSImage imageNamed:@"sound_button"]];
-	[speakingView setSelectedRange:selectionRange];
+    dispatch_sync(dispatch_get_main_queue(), ^{
+        [pronounceButton setImage:[NSImage imageNamed:@"sound_button"]];
+        [speakingView setSelectedRange:selectionRange];
+    });
 }
 
 - (void)speakingErrorOccured:(id)sender
 {
 	NSRunAlertPanel(
 		@"Speech Error",
-		[NSString stringWithFormat:@"Error %d occurred.", [speechManager lastError]],
+                    @"%@", [NSString stringWithFormat:@"Error %d occurred.", [speechManager lastError]],
 		@"OK", nil, nil);
 }
 
